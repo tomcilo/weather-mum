@@ -1,8 +1,8 @@
 import java.awt.*;
 
 public final class StyleGuide {
-    private static final int screenWidth = 1024;
-    private static final int screenHeight = 768;
+    private static final int screenWidth = 375;
+    private static final int screenHeight = 667;
     private static final Color backgroundColor = Color.white;
 
     public static int getScreenWidth() {
