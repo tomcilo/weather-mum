@@ -5,6 +5,7 @@ import org.json.simple.*;
 import org.json.simple.parser.*;
 import java.util.stream.Collectors;
 
+<<<<<<< HEAD
 /* TODO:
  *   Add some state and cashe responses
  *   Add forecast
@@ -12,12 +13,15 @@ import java.util.stream.Collectors;
  *
  */
 
+=======
+>>>>>>> master
 public class Fetcher {
-	// self explanatory
 	private static final String api_key = "sAITtV5AClfBKltmGkAVbufG0IAxFsue";
-	// %d location code
+
+	// %d is location code
 	// %s api_key
 	private static final String current_api = "http://dataservice.accuweather.com/currentconditions/v1/%d?apikey=%s";
+<<<<<<< HEAD
 	// %s api_key
 	// %s quary (prefix)
 	private static final String autocomplete_api = "http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=%s&q=%s&language=en-uk";
@@ -43,14 +47,16 @@ public class Fetcher {
 
 
 
+=======
+>>>>>>> master
 
-	// Returns raw response given url
 	private static String download(String url) throws MalformedURLException, IOException {
 		URL the_url = new URL(url);
 		BufferedReader bf = new BufferedReader(new InputStreamReader(the_url.openStream()));
 
 		return bf.lines().collect(Collectors.joining());
 	}
+<<<<<<< HEAD
 
 	// TODO: documentation
 	public static Map<String, String> fetchCurrent(int location_code) throws Exception {
@@ -87,19 +93,29 @@ public class Fetcher {
 			JSONObject obj = (JSONObject)ja.get(i);
 			JSONObject js_country = (JSONObject)obj.get("Country");
 			JSONObject js_area = (JSONObject)obj.get("AdministrativeArea");
+=======
+	
+	// 
+	public static String fetchCurrent(int location_code) throws Exception {
+		String response = download(String.format(current_api, location_code, api_key));
+>>>>>>> master
 
-			// might be useful
-			String name    = obj.get("LocalizedName").toString();
-			String code    = obj.get("Key").toString();
-			String country = js_country.get("LocalizedName").toString();
-			String area    = js_area.get("ID").toString();
+		JSONArray ja = (JSONArray)(new JSONParser().parse(response));
+		Map<String, Object> map = new HashMap<String, Object>();
 
-			ret.add(Integer.parseInt(code));
-			
+		// This can probably be replaced with ~1 line of code, but hey...
+		// Load the content of the ja[0] into map
+		for (Iterator itr = ja.iterator(); itr.hasNext(); ) {
+			Iterator<Map.Entry> itr1 = ((Map) itr.next()).entrySet().iterator();
+			while (itr1.hasNext()) {
+				Map.Entry pair = itr1.next();
+				map.put(pair.getKey().toString(), pair.getValue());
+			}
 		}
 
-		return ret;
+		return response;
 	}
+<<<<<<< HEAD
 	
 	public static Integer fetchCurrentCity() throws Exception {
 		String ipaddr = download("https://ipinfo.io/ip");
@@ -147,5 +163,12 @@ public class Fetcher {
 		System.out.printf("\n\n\nfetchCurretnCity()\n   %s\n", fetchCurrentCity());
 
 		System.out.printf("\n\n\nfetchForecast(32700 -- Cambridge):\n   %s", fetchForecast(327200));
+=======
+
+	// Only for testing
+	public static void main(String[] args) throws Exception {
+	//	download("https://wttr.in/");
+		System.out.println(fetchCurrent(327200));
+>>>>>>> master
 	}
 }
