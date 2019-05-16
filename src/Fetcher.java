@@ -83,13 +83,13 @@ public class Fetcher {
 	}
 
 	// TODO: documentation
-	public static List<Integer> fetchAutocompletedCities(String prefix) throws Exception {
+	public static List<String> fetchAutocompletedCities(String prefix) throws Exception {
 		String response = download(String.format(autocomplete_api, api_key, prefix));
 	
 
 		JSONArray ja = (JSONArray)(new JSONParser().parse(response));
 		
-		List<Integer> ret = new ArrayList<Integer>();
+		List<String> ret = new ArrayList<String>();
 		for (int i = 0; i < ja.size(); i++) {
 			JSONObject obj = (JSONObject)ja.get(i);
 			JSONObject js_country = (JSONObject)obj.get("Country");
@@ -101,8 +101,8 @@ public class Fetcher {
 			String country = js_country.get("LocalizedName").toString();
 			String area    = js_area.get("ID").toString();
 
-			ret.add(Integer.parseInt(code));
-			
+			//ret.add(Integer.parseInt(code));
+			ret.add(name);
 		}
 
 		return ret;

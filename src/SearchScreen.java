@@ -1,6 +1,7 @@
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
+import javax.swing.border.TitledBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
@@ -15,7 +16,7 @@ import java.util.List;
 
 public class SearchScreen extends JFrame  {
     JTextField tf;
-    DefaultListModel<City> model;
+    DefaultListModel<String> model;
 
     SearchScreen()
     {
@@ -38,7 +39,7 @@ public class SearchScreen extends JFrame  {
     private JPanel createSearchPanel()
     {
         JPanel heading = new JPanel();
-
+        heading.setBackground(StyleGuide.getBackgroundColor());
         tf = new JTextField(20);
 
         tf.setBounds(130, 20, 200, 20);
@@ -54,9 +55,9 @@ public class SearchScreen extends JFrame  {
             }
         });
 
-
-        heading.add(tf);
         heading.add(createExit());
+        heading.add(tf);
+
         addBorder(heading,"Enter City Name");
         return  heading;
     }
@@ -64,10 +65,16 @@ public class SearchScreen extends JFrame  {
     private void updateCityPanel(String prefix)
     {
         model.clear();
-        List<City> cityList = new ArrayList<City>();
-        cityList.add(createDummyCity());
-        model.addElement(createDummyCity());
-       // model.addAll(cityList);
+        try {
+            List<String> cityNames = Fetcher.fetchAutocompletedCities(prefix);
+            for(String s:cityNames)
+            {
+                model.addElement(s);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        // model.addAll(cityList);
         //model.addAll(cityList);
     }
     private JPanel createCityPanel() {
@@ -75,23 +82,26 @@ public class SearchScreen extends JFrame  {
         addBorder(cities,"Cities");
         cities.setLayout(new GridLayout(1,1));
         List<City> cityList = new ArrayList<>();
-        model = new DefaultListModel<City>();
+        model = new DefaultListModel<String>();
         //model.addAll(cityList);
-        JList<City> cityJList = new JList<City>(model);
+        JList<String> cityJList = new JList<String>(model);
+
         cityJList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
 
-                JList<City> list = (JList<City>) e.getSource();
-                City c = list.getSelectedValue();
+                JList<String> list = (JList<String>) e.getSource();
+                String c = list.getSelectedValue();
 
-                System.out.println(c.getDisplayName());
+                System.out.println(c);
             }
         });
 
         JScrollPane scroll = new JScrollPane(cityJList);
 
+        cities.setBackground(StyleGuide.getBackgroundColor());
         cities.add(scroll);
+
 
         return cities;
     }
@@ -113,7 +123,9 @@ public class SearchScreen extends JFrame  {
     private void addBorder(JComponent component, String title) {
         Border etch = BorderFactory.createEtchedBorder(EtchedBorder.LOWERED);
         Border tb = BorderFactory.createTitledBorder(etch,title);
+        ((TitledBorder) tb).setTitleFont(StyleGuide.getRegularFont());
         component.setBorder(tb);
+
     }
 
 }
