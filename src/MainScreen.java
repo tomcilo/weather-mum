@@ -1,6 +1,7 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
 
 import java.awt.*;
@@ -27,32 +28,46 @@ public class MainScreen extends JFrame {
 
     }
 
-    private void addBorder(JComponent component, String title) {
-        Border etch = BorderFactory.createEtchedBorder(EtchedBorder.LOWERED);
-        Border tb = BorderFactory.createTitledBorder(etch,title);
-        component.setBorder(tb);
-    }
-
     private JPanel currentWeather() throws IOException {
         JPanel weath =  new JPanel();
-        weath.setLayout(new GridLayout(3,2));
+        weath.setLayout(new GridLayout(1,2));
+        weath.setBorder(new EmptyBorder(10, 10, 10, 10));
 
-        JLabel tempText = new JLabel(city.getCurrent().getOverall() + "°test");
+        JPanel left = new JPanel();
+        left.setLayout(new GridLayout(3,1));
+        JPanel right = new JPanel();
+        right.setLayout(new GridLayout(2,1));
+
+        // creating left side of top of screen
+        // large label for temp
+        JLabel tempText = new JLabel(city.getCurrent().getOverall() + "°");
         tempText.setFont(StyleGuide.getLargeFont());
-        weath.add(tempText);
-
+        left.add(tempText);
+        // weather description
         JLabel descText = new JLabel(city.getCurrent().getDescription());
         descText.setFont(StyleGuide.getRegularFont());
-        weath.add(descText);
-
+        left.add(descText);
+        // high low
         JLabel hlText = new JLabel(city.getCurrent().getHighLow());
         hlText.setFont(StyleGuide.getSmallFont());
-        weath.add(hlText);
-        
-        BufferedImage myPicture = ImageIO.read(new File("icons/location_tmp.png"));
-        JLabel picLabel = new JLabel(new ImageIcon(myPicture));
-        weath.add(picLabel);
+        left.add(hlText);
 
+        weath.add(left);
+
+
+        // creating right side of top of screen
+        // location icon
+        BufferedImage locIcon = ImageIO.read(StyleGuide.getLocationIcon());
+        JLabel locIconLabel = new JLabel(new ImageIcon(locIcon));
+        right.add(locIconLabel, BorderLayout.EAST);
+
+        // weather icon
+        BufferedImage weathIconTmp = ImageIO.read(city.getCurrent().getWeatheryIcon());
+        Image weathIcon = weathIconTmp.getScaledInstance(40,40,Image.SCALE_SMOOTH);
+        JLabel weathIconLabel = new JLabel(new ImageIcon(weathIcon));
+        right.add(weathIconLabel);
+
+        weath.add(right);
 
         return weath;
     }
