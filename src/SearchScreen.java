@@ -8,14 +8,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-public class SearchScreen extends JFrame  {
+public class SearchScreen extends JFrame implements ActionListener {
     JTextField tf;
-    DefaultListModel<City> model;
+    JButton search;
+
+
 
     SearchScreen()
     {
@@ -23,16 +22,13 @@ public class SearchScreen extends JFrame  {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(StyleGuide.getScreenWidth(),StyleGuide.getScreenHeight());
 
-
         add(createSearchPanel(),BorderLayout.NORTH);
-
         add(createCityPanel(),BorderLayout.CENTER);
+        add(search, BorderLayout.SOUTH);
     }
-
-    public JButton createExit()
+    public void createSearchScreen()
     {
-        JButton exit = new JButton("Back");
-        return exit;
+
     }
 
     private JPanel createSearchPanel()
@@ -43,41 +39,30 @@ public class SearchScreen extends JFrame  {
 
         tf.setBounds(130, 20, 200, 20);
 
+        search = new JButton("Submit");
+
+        search.setBounds(50, 50, 100, 20);
 
         //tf.addActionListener(this);
         tf.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
 
-                System.out.println("You searched " + tf.getText()+e.getKeyChar());
-                updateCityPanel(tf.getText()+e.getKeyChar());
+                System.out.println("You searched " + tf.getText() + e.getKeyChar());
             }
         });
-
-
+        search.addActionListener(this);
         heading.add(tf);
-        heading.add(createExit());
         addBorder(heading,"Enter City Name");
         return  heading;
     }
 
-    private void updateCityPanel(String prefix)
-    {
-        model.clear();
-        List<City> cityList = new ArrayList<>();
-        cityList.add(createDummyCity());
-        cityList.add(createDummyCity());
-        model.addAll(cityList);
-
-    }
     private JPanel createCityPanel() {
         JPanel cities = new JPanel();
         addBorder(cities,"Cities");
         cities.setLayout(new GridLayout(1,1));
-        List<City> cityList = new ArrayList<>();
-        model = new DefaultListModel<>();
-        model.addAll(cityList);
-        JList<City> cityJList = new JList<City>(model);
+        List<City> cityList = null;
+        JList<City> cityJList = new JList<City>(cityList.toArray(new City[cityList.size()]));
         cityJList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
@@ -94,26 +79,19 @@ public class SearchScreen extends JFrame  {
         cities.add(scroll);
 
         return cities;
-    }
-
-    private City createDummyCity()
-    {
-        Weather w = new Weather(StyleGuide.getSunnyIcon(), StyleGuide.getSunnyIcon(),
-                new Clothing(StyleGuide.getUmbrellaIcon(), StyleGuide.gettShirtIcon(),
-                        StyleGuide.getShortsIcon(), StyleGuide.getShortsIcon()),
-                "Monday", new Date(), 10, "Sunny", 18, 20, 10, 20);
-        ArrayList we = new ArrayList<Weather>();
-        we.add(w);
 
 
-        City c = new City("Test", we, we, w, 20, 10);
-        return c;
     }
 
     private void addBorder(JComponent component, String title) {
         Border etch = BorderFactory.createEtchedBorder(EtchedBorder.LOWERED);
         Border tb = BorderFactory.createTitledBorder(etch,title);
         component.setBorder(tb);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        System.out.println("You searched " + tf.getText());
     }
 
 }
