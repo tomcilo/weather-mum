@@ -37,7 +37,7 @@ public class MainScreen extends JFrame {
         JPanel weath =  new JPanel();
         weath.setLayout(new GridLayout(3,2));
 
-        JLabel tempText = new JLabel(city.getCurrent().getOverall() + "°");
+        JLabel tempText = new JLabel(city.getCurrent().getOverall() + "°test");
         tempText.setFont(StyleGuide.getLargeFont());
         weath.add(tempText);
 
