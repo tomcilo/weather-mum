@@ -9,35 +9,35 @@ public final class StyleGuide {
     private static final Color backgroundColor = Color.white;
 
     private static String font = "Verdana";
-    private static Font largeFont= new Font(font,1,20);
-    private static Font regularFont= new Font(font,0,15);
-    private static Font smallFont= new Font(font,0,10);
+    private static Font largeFont= new Font(font,Font.BOLD,20);
+    private static Font regularFont= new Font(font,Font.PLAIN,15);
+    private static Font smallFont= new Font(font,Font.PLAIN,10);
 
-    private static final File locationIcon = new File("icons/location_tmp.png");
-    private static final File umbrellaIcon = new File("icons/umbrella.png");
-    private static final File scarfIcon = new File("icons/scarf.png");
-    private static final File sunglassesIcon = new File("icons/sunglasses.png");
-    private static final File tShirtIcon = new File("icons/tShirt.png");
-    private static final File longSleevedShirtIcon = new File("icons/longSleevedShirt.png");
-    private static final File sweaterIcon = new File("icons/sweater.png");
-    private static final File sweatshirtIcon = new File("icons/sweatshirt.png");
-    private static final File jacketIcon = new File("icons/jacket.png");
-    private static final File coatIcon = new File("icons/coat.png");
-    private static final File waterproofIcon = new File("icons/waterproof.png");
-    private static final File shortShortsIcon = new File("icons/shortShorts.png");
-    private static final File shortsIcon = new File("icons/shorts.png");
-    private static final File trousersIcon = new File("icons/trousers.png");
-    private static final File snowBootIcon = new File("icons/snowBoot.png");
-    private static final File rainBootsIcon = new File("icons/rainBoots.png");
-    private static final File sneakersIcon = new File("icons/sneakers.png");
-    private static final File sandalsIcon = new File("icons/sandals.png");
-    private static final File sunnyIcon = new File("icons/sunny.png");
-    private static final File partlyCloudyIcon = new File("icons/partlyCloudy.png");
-    private static final File cloudyIcon = new File("icons/cloudy.png");
-    private static final File rainingIcon = new File("icons/raining.png");
-    private static final File thunderstormIcon = new File("icons/thunderstorm.png");
-    private static final File snowingIcon = new File("icons/snowing.png");
-    private static final File windyIcon = new File("icons/windy.png");
+    private static final File locationIcon = new File("icons/locationIcon.png");
+    private static final File umbrellaIcon = new File("icons/umbrellaIcon.png");
+    private static final File scarfIcon = new File("icons/scarfIcon.png");
+    private static final File sunglassesIcon = new File("icons/sunglassesIcon.png");
+    private static final File tShirtIcon = new File("icons/tShirtIcon.png");
+    private static final File longSleevedShirtIcon = new File("icons/longSleevedShirtIcon.png");
+    private static final File sweaterIcon = new File("icons/sweaterIcon.png");
+    private static final File sweatshirtIcon = new File("icons/sweatshirtIcon.png");
+    private static final File jacketIcon = new File("icons/jacketIcon.png");
+    private static final File coatIcon = new File("icons/coatIcon.png");
+    private static final File waterproofIcon = new File("icons/waterproofIcon.png");
+    private static final File shortShortsIcon = new File("icons/shortShortsIcon.png");
+    private static final File shortsIcon = new File("icons/shortsIcon.png");
+    private static final File trousersIcon = new File("icons/trousersIcon.png");
+    private static final File snowBootIcon = new File("icons/snowBootIcon.png");
+    private static final File rainBootsIcon = new File("icons/rainBootsIcon.png");
+    private static final File sneakersIcon = new File("icons/sneakersIcon.png");
+    private static final File sandalsIcon = new File("icons/sandalsIcon.png");
+    private static final File sunnyIcon = new File("icons/sunnyIcon.png");
+    private static final File partlyCloudyIcon = new File("icons/partlyCloudyIcon.png");
+    private static final File cloudyIcon = new File("icons/cloudyIcon.png");
+    private static final File rainingIcon = new File("icons/rainingIcon.png");
+    private static final File thunderstormIcon = new File("icons/thunderstormIcon.png");
+    private static final File snowingIcon = new File("icons/snowingIcon.png");
+    private static final File windyIcon = new File("icons/windyIcon.png");
 
 
     public static int getScreenWidth() {
