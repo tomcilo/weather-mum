@@ -14,6 +14,7 @@ public final class StyleGuide {
     private static Font smallFont= new Font(font,Font.PLAIN,10);
 
     private static final File locationIcon = new File("icons/locationIcon.png");
+    private static final File searchIcon = new File("icons/searchIcon.png");
     private static final File umbrellaIcon = new File("icons/umbrellaIcon.png");
     private static final File scarfIcon = new File("icons/scarfIcon.png");
     private static final File sunglassesIcon = new File("icons/sunglassesIcon.png");
@@ -59,6 +60,8 @@ public final class StyleGuide {
     public static Font getSmallFont() { return smallFont; }
 
     public static File getLocationIcon() { return locationIcon; }
+
+    public static File getSearchIcon() { return locationIcon; }
 
     public static File getUmbrellaIcon() {
         return umbrellaIcon;
