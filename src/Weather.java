@@ -3,7 +3,7 @@ import java.util.Date;
 
 public class Weather {
     private Path weatheryIcon;
-    private Path clotheryIcon;
+    private Path mainIcon;
     private Clothing recommendation;
     private String weekDay;
     private Date date;
@@ -18,7 +18,7 @@ public class Weather {
                    String weekDay, Date date, int hour, String description,
                    int realFeel, int high, int low, int overall) {
         this.weatheryIcon = weatheryIcon;
-        this.clotheryIcon = clotheryIcon;
+        this.mainIcon = clotheryIcon;
         this.recommendation = recommendation;
         this.weekDay = weekDay;
         this.date = date;
@@ -34,8 +34,8 @@ public class Weather {
         return weatheryIcon;
     }
 
-    public Path getClotheryIcon() {
-        return clotheryIcon;
+    public Path getMainIcon() {
+        return mainIcon;
     }
 
     public Clothing getRecommendation() {
@@ -73,4 +73,6 @@ public class Weather {
     public int getOverall() {
         return overall;
     }
+
+    public String getHighLow() { return low + "°/" + high + "°"; }
 }
