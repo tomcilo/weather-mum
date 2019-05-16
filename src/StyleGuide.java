@@ -8,10 +8,10 @@ public final class StyleGuide {
     private static final int screenHeight = 667;
     private static final Color backgroundColor = Color.white;
 
-    private static String font = "Verdana";
-    private static Font largeFont= new Font(font,Font.BOLD,20);
-    private static Font regularFont= new Font(font,Font.PLAIN,15);
-    private static Font smallFont= new Font(font,Font.PLAIN,10);
+    private static final String font = "Verdana";
+    private static final Font largeFont= new Font(font,Font.BOLD,20);
+    private static final Font regularFont= new Font(font,Font.PLAIN,15);
+    private static final Font smallFont= new Font(font,Font.PLAIN,10);
 
     private static final File locationIcon = new File("icons/locationIcon.png");
     private static final File searchIcon = new File("icons/searchIcon.png");
