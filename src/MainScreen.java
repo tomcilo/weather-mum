@@ -1,8 +1,12 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Date;
@@ -10,7 +14,7 @@ import java.util.Date;
 public class MainScreen extends JFrame {
     private City city;
 
-    public MainScreen(City city) {
+    public MainScreen(City city) throws IOException {
         super(city.getDisplayName());
         this.city = city;
 
@@ -29,9 +33,9 @@ public class MainScreen extends JFrame {
         component.setBorder(tb);
     }
 
-    private JPanel currentWeather() {
+    private JPanel currentWeather() throws IOException {
         JPanel weath =  new JPanel();
-        weath.setLayout(new GridLayout(3,1));
+        weath.setLayout(new GridLayout(3,2));
 
         JLabel tempText = new JLabel(city.getCurrent().getOverall() + "°");
         tempText.setFont(StyleGuide.getLargeFont());
@@ -44,14 +48,19 @@ public class MainScreen extends JFrame {
         JLabel hlText = new JLabel(city.getCurrent().getHighLow());
         hlText.setFont(StyleGuide.getSmallFont());
         weath.add(hlText);
+        
+        BufferedImage myPicture = ImageIO.read(new File("icons/location_tmp.png"));
+        JLabel picLabel = new JLabel(new ImageIcon(myPicture));
+        weath.add(picLabel);
+
 
         return weath;
     }
 
     public static void main(String[] args) throws java.io.IOException {
-        Weather w = new Weather(Paths.get("../icons/sun.png"), Paths.get("../icons/long_sleeve_shirt.png"),
-                new Clothing(Paths.get("../icons/umbrella.png"), Paths.get("../icons/long_sleeve_shirt.png"),
-                        Paths.get("../icons/shorts.png"), Paths.get("../icons/shorts.png")),
+        Weather w = new Weather(StyleGuide.getSunnyIcon(), StyleGuide.getSunnyIcon(),
+                new Clothing(StyleGuide.getUmbrellaIcon(), StyleGuide.gettShirtIcon(),
+                        StyleGuide.getShortsIcon(), StyleGuide.getShortsIcon()),
                 "Monday", new Date(), 10, "Sunny", 18, 20, 10, 20);
         ArrayList we = new ArrayList<Weather>();
         we.add(w);

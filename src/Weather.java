@@ -1,9 +1,10 @@
+import java.io.File;
 import java.nio.file.Path;
 import java.util.Date;
 
 public class Weather {
-    private Path weatheryIcon;
-    private Path mainIcon;
+    private File weatheryIcon;
+    private File mainIcon;
     private Clothing recommendation;
     private String weekDay;
     private Date date;
@@ -14,7 +15,7 @@ public class Weather {
     private int low;
     private int overall;
 
-    public Weather(Path weatheryIcon, Path clotheryIcon, Clothing recommendation,
+    public Weather(File weatheryIcon, File clotheryIcon, Clothing recommendation,
                    String weekDay, Date date, int hour, String description,
                    int realFeel, int high, int low, int overall) {
         this.weatheryIcon = weatheryIcon;
@@ -30,11 +31,11 @@ public class Weather {
         this.overall = overall;
     }
 
-    public Path getWeatheryIcon() {
+    public File getWeatheryIcon() {
         return weatheryIcon;
     }
 
-    public Path getMainIcon() {
+    public File getMainIcon() {
         return mainIcon;
     }
 
