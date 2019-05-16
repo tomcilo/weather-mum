@@ -40,119 +40,119 @@ public final class StyleGuide {
     private static final File windyIcon = new File("icons/windyIcon.png");
 
 
-    private static int getScreenWidth() {
+    public static int getScreenWidth() {
         return screenWidth;
     }
 
-    private static int getScreenHeight() {
+    public static int getScreenHeight() {
         return screenHeight;
     }
 
-    private static Color getBackgroundColor() {
+    public static Color getBackgroundColor() {
         return backgroundColor;
     }
 
-    private static Font getLargeFont() { return largeFont; }
+    public static Font getLargeFont() { return largeFont; }
 
-    private static Font getRegularFont() { return regularFont; }
+    public static Font getRegularFont() { return regularFont; }
 
-    private static Font getSmallFont() { return smallFont; }
+    public static Font getSmallFont() { return smallFont; }
 
-    private static File getLocationIcon() { return locationIcon; }
+    public static File getLocationIcon() { return locationIcon; }
 
-    private static File getUmbrellaIcon() {
+    public static File getUmbrellaIcon() {
         return umbrellaIcon;
     }
 
-    private static File getScarfIcon() {
+    public static File getScarfIcon() {
         return scarfIcon;
     }
 
-    private static File getSunglassesIcon() {
+    public static File getSunglassesIcon() {
         return sunglassesIcon;
     }
 
-    private static File gettShirtIcon() {
+    public static File gettShirtIcon() {
         return tShirtIcon;
     }
 
-    private static File getLongSleevedShirtIcon() {
+    public static File getLongSleevedShirtIcon() {
         return longSleevedShirtIcon;
     }
 
-    private static File getSweaterIcon() {
+    public static File getSweaterIcon() {
         return sweaterIcon;
     }
 
-    private static File getSweatshirtIcon() {
+    public static File getSweatshirtIcon() {
         return sweatshirtIcon;
     }
 
-    private static File getJacketIcon() {
+    public static File getJacketIcon() {
         return jacketIcon;
     }
 
-    private static File getCoatIcon() {
+    public static File getCoatIcon() {
         return coatIcon;
     }
 
-    private static File getWaterproofIcon() {
+    public static File getWaterproofIcon() {
         return waterproofIcon;
     }
 
-    private static File getShortShortsIcon() {
+    public static File getShortShortsIcon() {
         return shortShortsIcon;
     }
 
-    private static File getShortsIcon() {
+    public static File getShortsIcon() {
         return shortsIcon;
     }
 
-    private static File getTrousersIcon() {
+    public static File getTrousersIcon() {
         return trousersIcon;
     }
 
-    private static File getSnowBootIcon() {
+    public static File getSnowBootIcon() {
         return snowBootIcon;
     }
 
-    private static File getRainBootsIcon() {
+    public static File getRainBootsIcon() {
         return rainBootsIcon;
     }
 
-    private static File getSneakersIcon() {
+    public static File getSneakersIcon() {
         return sneakersIcon;
     }
 
-    private static File getSandalsIcon() {
+    public static File getSandalsIcon() {
         return sandalsIcon;
     }
 
-    private static File getSunnyIcon() {
+    public static File getSunnyIcon() {
         return sunnyIcon;
     }
 
-    private static File getPartlyCloudyIcon() {
+    public static File getPartlyCloudyIcon() {
         return partlyCloudyIcon;
     }
 
-    private static File getCloudyIcon() {
+    public static File getCloudyIcon() {
         return cloudyIcon;
     }
 
-    private static File getRainingIcon() {
+    public static File getRainingIcon() {
         return rainingIcon;
     }
 
-    private static File getThunderstormIcon() {
+    public static File getThunderstormIcon() {
         return thunderstormIcon;
     }
 
-    private static File getSnowingIcon() {
+    public static File getSnowingIcon() {
         return snowingIcon;
     }
 
-    private static File getWindyIcon() {
+    public static File getWindyIcon() {
         return windyIcon;
     }
 }
