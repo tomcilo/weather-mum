@@ -24,8 +24,7 @@ public class MainScreen extends JFrame {
         setSize(StyleGuide.getScreenWidth(), StyleGuide.getScreenHeight());
 
         add(currentWeather(), BorderLayout.NORTH);
-
-
+        add(currentOutfit(), BorderLayout.CENTER);
     }
 
     private JPanel currentWeather() throws IOException {
@@ -57,9 +56,15 @@ public class MainScreen extends JFrame {
 
         // creating right side of top of screen
         // location icon
-        BufferedImage locIcon = ImageIO.read(StyleGuide.getLocationIcon());
-        JLabel locIconLabel = new JLabel(new ImageIcon(locIcon));
-        right.add(locIconLabel, BorderLayout.EAST);
+        BufferedImage locIconTmp = ImageIO.read(StyleGuide.getLocationIcon());
+        Image locIconTmp2 = locIconTmp.getScaledInstance(20,20,Image.SCALE_SMOOTH);
+        Icon locIcon = new ImageIcon(locIconTmp2);
+        JButton locationButton = new JButton();
+        locationButton.setIcon(locIcon);
+        locationButton.setText(city.getDisplayName());
+        locationButton.setHorizontalTextPosition(SwingConstants.RIGHT);
+        locationButton.setFont(StyleGuide.getLargeFont());
+        right.add(locationButton);
 
         // weather icon
         BufferedImage weathIconTmp = ImageIO.read(city.getCurrent().getWeatheryIcon());
@@ -72,10 +77,37 @@ public class MainScreen extends JFrame {
         return weath;
     }
 
+    private JPanel currentOutfit() throws IOException {
+        JPanel outfit =  new JPanel();
+        outfit.setLayout(new GridLayout(4,1));
+
+        BufferedImage accessoryIconTmp = ImageIO.read(city.getCurrent().getRecommendation().getAccesoriesIcon());
+        Image accessoryIcon = accessoryIconTmp.getScaledInstance(50,50,Image.SCALE_SMOOTH);
+        JLabel accessoryIconLabel = new JLabel(new ImageIcon(accessoryIcon));
+        outfit.add(accessoryIconLabel);
+
+        BufferedImage topIconTmp = ImageIO.read(city.getCurrent().getRecommendation().getTopIcon());
+        Image topIcon = topIconTmp.getScaledInstance(50,50,Image.SCALE_SMOOTH);
+        JLabel topIconLabel = new JLabel(new ImageIcon(topIcon));
+        outfit.add(topIconLabel);
+
+        BufferedImage bottomIconTmp = ImageIO.read(city.getCurrent().getRecommendation().getBottomIcon());
+        Image bottomIcon = bottomIconTmp.getScaledInstance(50,50,Image.SCALE_SMOOTH);
+        JLabel bottomIconLabel = new JLabel(new ImageIcon(bottomIcon));
+        outfit.add(bottomIconLabel);
+
+        BufferedImage shoesIconTmp = ImageIO.read(city.getCurrent().getRecommendation().getShoesIcon());
+        Image shoesIcon = shoesIconTmp.getScaledInstance(50,50,Image.SCALE_SMOOTH);
+        JLabel shoesIconLabel = new JLabel(new ImageIcon(shoesIcon));
+        outfit.add(shoesIconLabel);
+
+        return outfit;
+    }
+
     public static void main(String[] args) throws java.io.IOException {
         Weather w = new Weather(StyleGuide.getSunnyIcon(), StyleGuide.getSunnyIcon(),
                 new Clothing(StyleGuide.getUmbrellaIcon(), StyleGuide.gettShirtIcon(),
-                        StyleGuide.getShortsIcon(), StyleGuide.getShortsIcon()),
+                        StyleGuide.getShortShortsIcon(), StyleGuide.getSearchIcon()),
                 "Monday", new Date(), 10, "Sunny", 18, 20, 10, 20);
         ArrayList we = new ArrayList<Weather>();
         we.add(w);
