@@ -9,150 +9,150 @@ public final class StyleGuide {
     private static final Color backgroundColor = Color.white;
 
     private static String font = "Verdana";
-    private static Font largeFont= new Font(font,1,20);
-    private static Font regularFont= new Font(font,0,15);
-    private static Font smallFont= new Font(font,0,10);
+    private static Font largeFont= new Font(font,Font.BOLD,20);
+    private static Font regularFont= new Font(font,Font.PLAIN,15);
+    private static Font smallFont= new Font(font,Font.PLAIN,10);
 
-    private static final File locationIcon = new File("icons/location_tmp.png");
-    private static final File umbrellaIcon = new File("icons/umbrella.png");
-    private static final File scarfIcon = new File("icons/scarf.png");
-    private static final File sunglassesIcon = new File("icons/sunglasses.png");
-    private static final File tShirtIcon = new File("icons/tShirt.png");
-    private static final File longSleevedShirtIcon = new File("icons/longSleevedShirt.png");
-    private static final File sweaterIcon = new File("icons/sweater.png");
-    private static final File sweatshirtIcon = new File("icons/sweatshirt.png");
-    private static final File jacketIcon = new File("icons/jacket.png");
-    private static final File coatIcon = new File("icons/coat.png");
-    private static final File waterproofIcon = new File("icons/waterproof.png");
-    private static final File shortShortsIcon = new File("icons/shortShorts.png");
-    private static final File shortsIcon = new File("icons/shorts.png");
-    private static final File trousersIcon = new File("icons/trousers.png");
-    private static final File snowBootIcon = new File("icons/snowBoot.png");
-    private static final File rainBootsIcon = new File("icons/rainBoots.png");
-    private static final File sneakersIcon = new File("icons/sneakers.png");
-    private static final File sandalsIcon = new File("icons/sandals.png");
-    private static final File sunnyIcon = new File("icons/sunny.png");
-    private static final File partlyCloudyIcon = new File("icons/partlyCloudy.png");
-    private static final File cloudyIcon = new File("icons/cloudy.png");
-    private static final File rainingIcon = new File("icons/raining.png");
-    private static final File thunderstormIcon = new File("icons/thunderstorm.png");
-    private static final File snowingIcon = new File("icons/snowing.png");
-    private static final File windyIcon = new File("icons/windy.png");
+    private static final File locationIcon = new File("icons/locationIcon.png");
+    private static final File umbrellaIcon = new File("icons/umbrellaIcon.png");
+    private static final File scarfIcon = new File("icons/scarfIcon.png");
+    private static final File sunglassesIcon = new File("icons/sunglassesIcon.png");
+    private static final File tShirtIcon = new File("icons/tShirtIcon.png");
+    private static final File longSleevedShirtIcon = new File("icons/longSleevedShirtIcon.png");
+    private static final File sweaterIcon = new File("icons/sweaterIcon.png");
+    private static final File sweatshirtIcon = new File("icons/sweatshirtIcon.png");
+    private static final File jacketIcon = new File("icons/jacketIcon.png");
+    private static final File coatIcon = new File("icons/coatIcon.png");
+    private static final File waterproofIcon = new File("icons/waterproofIcon.png");
+    private static final File shortShortsIcon = new File("icons/shortShortsIcon.png");
+    private static final File shortsIcon = new File("icons/shortsIcon.png");
+    private static final File trousersIcon = new File("icons/trousersIcon.png");
+    private static final File snowBootIcon = new File("icons/snowBootIcon.png");
+    private static final File rainBootsIcon = new File("icons/rainBootsIcon.png");
+    private static final File sneakersIcon = new File("icons/sneakersIcon.png");
+    private static final File sandalsIcon = new File("icons/sandalsIcon.png");
+    private static final File sunnyIcon = new File("icons/sunnyIcon.png");
+    private static final File partlyCloudyIcon = new File("icons/partlyCloudyIcon.png");
+    private static final File cloudyIcon = new File("icons/cloudyIcon.png");
+    private static final File rainingIcon = new File("icons/rainingIcon.png");
+    private static final File thunderstormIcon = new File("icons/thunderstormIcon.png");
+    private static final File snowingIcon = new File("icons/snowingIcon.png");
+    private static final File windyIcon = new File("icons/windyIcon.png");
 
 
-    public static int getScreenWidth() {
+    private static int getScreenWidth() {
         return screenWidth;
     }
 
-    public static int getScreenHeight() {
+    private static int getScreenHeight() {
         return screenHeight;
     }
 
-    public static Color getBackgroundColor() {
+    private static Color getBackgroundColor() {
         return backgroundColor;
     }
 
-    public static Font getLargeFont() { return largeFont; }
+    private static Font getLargeFont() { return largeFont; }
 
-    public static Font getRegularFont() { return regularFont; }
+    private static Font getRegularFont() { return regularFont; }
 
-    public static Font getSmallFont() { return smallFont; }
+    private static Font getSmallFont() { return smallFont; }
 
-    public static File getLocationIcon() { return locationIcon; }
+    private static File getLocationIcon() { return locationIcon; }
 
-    public static File getUmbrellaIcon() {
+    private static File getUmbrellaIcon() {
         return umbrellaIcon;
     }
 
-    public static File getScarfIcon() {
+    private static File getScarfIcon() {
         return scarfIcon;
     }
 
-    public static File getSunglassesIcon() {
+    private static File getSunglassesIcon() {
         return sunglassesIcon;
     }
 
-    public static File gettShirtIcon() {
+    private static File gettShirtIcon() {
         return tShirtIcon;
     }
 
-    public static File getLongSleevedShirtIcon() {
+    private static File getLongSleevedShirtIcon() {
         return longSleevedShirtIcon;
     }
 
-    public static File getSweaterIcon() {
+    private static File getSweaterIcon() {
         return sweaterIcon;
     }
 
-    public static File getSweatshirtIcon() {
+    private static File getSweatshirtIcon() {
         return sweatshirtIcon;
     }
 
-    public static File getJacketIcon() {
+    private static File getJacketIcon() {
         return jacketIcon;
     }
 
-    public static File getCoatIcon() {
+    private static File getCoatIcon() {
         return coatIcon;
     }
 
-    public static File getWaterproofIcon() {
+    private static File getWaterproofIcon() {
         return waterproofIcon;
     }
 
-    public static File getShortShortsIcon() {
+    private static File getShortShortsIcon() {
         return shortShortsIcon;
     }
 
-    public static File getShortsIcon() {
+    private static File getShortsIcon() {
         return shortsIcon;
     }
 
-    public static File getTrousersIcon() {
+    private static File getTrousersIcon() {
         return trousersIcon;
     }
 
-    public static File getSnowBootIcon() {
+    private static File getSnowBootIcon() {
         return snowBootIcon;
     }
 
-    public static File getRainBootsIcon() {
+    private static File getRainBootsIcon() {
         return rainBootsIcon;
     }
 
-    public static File getSneakersIcon() {
+    private static File getSneakersIcon() {
         return sneakersIcon;
     }
 
-    public static File getSandalsIcon() {
+    private static File getSandalsIcon() {
         return sandalsIcon;
     }
 
-    public static File getSunnyIcon() {
+    private static File getSunnyIcon() {
         return sunnyIcon;
     }
 
-    public static File getPartlyCloudyIcon() {
+    private static File getPartlyCloudyIcon() {
         return partlyCloudyIcon;
     }
 
-    public static File getCloudyIcon() {
+    private static File getCloudyIcon() {
         return cloudyIcon;
     }
 
-    public static File getRainingIcon() {
+    private static File getRainingIcon() {
         return rainingIcon;
     }
 
-    public static File getThunderstormIcon() {
+    private static File getThunderstormIcon() {
         return thunderstormIcon;
     }
 
-    public static File getSnowingIcon() {
+    private static File getSnowingIcon() {
         return snowingIcon;
     }
 
-    public static File getWindyIcon() {
+    private static File getWindyIcon() {
         return windyIcon;
     }
 }
