@@ -1,31 +1,32 @@
+import java.io.File;
 import java.nio.file.Path;
 
 public class Clothing {
-    private Path accesoriesIcon;
-    private Path topIcon;
-    private Path bottomIcon;
-    private Path shoesIcon;
+    private File accesoriesIcon;
+    private File topIcon;
+    private File bottomIcon;
+    private File shoesIcon;
 
-    public Clothing(Path accesoriesIcon, Path topIcon, Path bottomIcon, Path shoesIcon) {
+    public Clothing(File accesoriesIcon, File topIcon, File bottomIcon, File shoesIcon) {
         this.accesoriesIcon = accesoriesIcon;
         this.topIcon = topIcon;
         this.bottomIcon = bottomIcon;
         this.shoesIcon = shoesIcon;
     }
 
-    public Path getAccesoriesIcon() {
+    public File getAccesoriesIcon() {
         return accesoriesIcon;
     }
 
-    public Path getTopIcon() {
+    public File getTopIcon() {
         return topIcon;
     }
 
-    public Path getBottomIcon() {
+    public File getBottomIcon() {
         return bottomIcon;
     }
 
-    public Path getShoesIcon() {
+    public File getShoesIcon() {
         return shoesIcon;
     }
 }
