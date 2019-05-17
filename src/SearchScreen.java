@@ -50,7 +50,6 @@ public class SearchScreen extends JFrame  {
             @Override
             public void keyPressed(KeyEvent e) {
 
-                System.out.println("You searched " + tf.getText()+e.getKeyChar());
                 updateCityPanel(tf.getText()+e.getKeyChar());
             }
         });
@@ -65,6 +64,7 @@ public class SearchScreen extends JFrame  {
     private void updateCityPanel(String prefix)
     {
         model.clear();
+
         try {
             List<String> cityNames = Fetcher.fetchAutocompletedCities(prefix);
             for(String s:cityNames)
@@ -74,8 +74,6 @@ public class SearchScreen extends JFrame  {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        // model.addAll(cityList);
-        //model.addAll(cityList);
     }
     private JPanel createCityPanel() {
         JPanel cities = new JPanel();
@@ -83,7 +81,6 @@ public class SearchScreen extends JFrame  {
         cities.setLayout(new GridLayout(1,1));
         List<City> cityList = new ArrayList<>();
         model = new DefaultListModel<String>();
-        //model.addAll(cityList);
         JList<String> cityJList = new JList<String>(model);
 
         cityJList.addListSelectionListener(new ListSelectionListener() {
