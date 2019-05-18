@@ -33,6 +33,10 @@ public class SearchScreen extends JFrame  {
     public JButton createExit()
     {
         JButton exit = new JButton("Back");
+        exit.setFont(StyleGuide.getSmallFont());
+        exit.setBackground(Color.GRAY);
+        exit.setForeground(Color.white);
+        exit.setUI(StyleGuide.getButtonStyle());
         return exit;
     }
 
@@ -40,9 +44,8 @@ public class SearchScreen extends JFrame  {
     {
         JPanel heading = new JPanel();
         heading.setBackground(StyleGuide.getBackgroundColor());
-        tf = new JTextField(20);
-
-        tf.setBounds(130, 20, 200, 20);
+        tf = new JTextField(15);
+        tf.setFont(StyleGuide.getRegularFont());
 
 
         //tf.addActionListener(this);
@@ -50,13 +53,30 @@ public class SearchScreen extends JFrame  {
             @Override
             public void keyPressed(KeyEvent e) {
 
-                updateCityPanel(tf.getText()+e.getKeyChar());
+                //updateCityPanel(tf.getText()+e.getKeyChar());
             }
         });
 
         heading.add(createExit());
         heading.add(tf);
+        JButton search =  new JButton();
 
+        ImageIcon icon = new ImageIcon(String.valueOf(StyleGuide.getSearchIcon()));
+
+        Image image = icon.getImage(); // transform it
+        Image newimg = image.getScaledInstance(15, 15,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+        icon = new ImageIcon(newimg);
+
+        search.setIcon(icon);
+        search.setUI(StyleGuide.getButtonStyle());
+
+        search.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                updateCityPanel(tf.getText());
+            }
+        });
+        heading.add(search);
         addBorder(heading,"Enter City Name");
         return  heading;
     }
@@ -82,7 +102,7 @@ public class SearchScreen extends JFrame  {
         List<City> cityList = new ArrayList<>();
         model = new DefaultListModel<String>();
         JList<String> cityJList = new JList<String>(model);
-
+        cityJList.setCellRenderer(new CityListRenderer(cityJList, false));
         cityJList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {

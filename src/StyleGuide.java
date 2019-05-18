@@ -1,3 +1,6 @@
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.plaf.basic.BasicButtonUI;
 import java.awt.*;
 import java.io.File;
 import java.nio.file.Path;
@@ -7,6 +10,8 @@ public final class StyleGuide {
     private static final int screenWidth = 375;
     private static final int screenHeight = 667;
     private static final Color backgroundColor = Color.white;
+    private static final Color primaryBlue = new Color ( 82, 158, 202 );
+    private static final Color secondaryColor = new Color (202, 88, 104);
 
     private static final String font = "Verdana";
     private static final Font largeFont= new Font(font,Font.BOLD,20);
@@ -39,6 +44,7 @@ public final class StyleGuide {
     private static final File thunderstormIcon = new File("icons/thunderstormIcon.png");
     private static final File snowingIcon = new File("icons/snowingIcon.png");
     private static final File windyIcon = new File("icons/windyIcon.png");
+    private static final File trashCan = new File("icons/trashcanIcon.png");
 
 
     public static int getScreenWidth() {
@@ -61,7 +67,7 @@ public final class StyleGuide {
 
     public static File getLocationIcon() { return locationIcon; }
 
-    public static File getSearchIcon() { return locationIcon; }
+    public static File getSearchIcon() { return searchIcon; }
 
     public static File getUmbrellaIcon() {
         return umbrellaIcon;
@@ -157,5 +163,54 @@ public final class StyleGuide {
 
     public static File getWindyIcon() {
         return windyIcon;
+    }
+
+    public static File getTrashCan() {
+        return trashCan;
+    }
+
+    public static Color getPrimaryBlue() {
+        return primaryBlue;
+    }
+
+    public static Color getSecondaryColor() {
+        return secondaryColor;
+    }
+
+    public static String getFont() {
+        return font;
+    }
+
+    public static StyledButtonUI getButtonStyle()
+    {
+        return  new StyledButtonUI();
+    }
+
+    private static class StyledButtonUI extends BasicButtonUI {
+
+        @Override
+        public void installUI (JComponent c) {
+            super.installUI(c);
+            AbstractButton button = (AbstractButton) c;
+            button.setOpaque(false);
+            button.setBorder(new EmptyBorder(5, 15, 5, 15));
+        }
+
+        @Override
+        public void paint (Graphics g, JComponent c) {
+            AbstractButton b = (AbstractButton) c;
+            paintBackground(g, b, b.getModel().isPressed() ? 2 : 0);
+            super.paint(g, c);
+        }
+
+        private void paintBackground (Graphics g, JComponent c, int yOffset) {
+            Dimension size = c.getSize();
+            Graphics2D g2 = (Graphics2D) g;
+            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            g.setColor(c.getBackground().darker());
+            g.fillRoundRect(0, yOffset, size.width, size.height - yOffset, 10, 10);
+            g.setColor(c.getBackground());
+            g.fillRoundRect(0, yOffset, size.width, size.height + yOffset - 5, 10, 10);
+        }
     }
 }

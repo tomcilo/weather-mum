@@ -28,6 +28,10 @@ public class CityListScreen extends JFrame {
         header.setBackground(StyleGuide.getBackgroundColor());
         addBorder(header, "Search");
         JButton findNew = new JButton("Find a New City");
+        findNew.setFont(StyleGuide.getRegularFont());
+        findNew.setBackground(StyleGuide.getSecondaryColor());
+        findNew.setForeground(Color.white);
+        findNew.setUI(StyleGuide.getButtonStyle());
         header.add(findNew, BorderLayout.SOUTH);
         return header;
     }
@@ -40,7 +44,7 @@ public class CityListScreen extends JFrame {
         list.setLayout(new GridLayout(1,1));
         JList<String> cities = new JList<>(model);
 
-        cities.setCellRenderer(new CityListRenderer(cities));
+        cities.setCellRenderer(new CityListRenderer(cities, true));
         list.add(cities);
         return list;
     }
