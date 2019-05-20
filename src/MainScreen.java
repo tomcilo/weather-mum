@@ -1,19 +1,16 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.EtchedBorder;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.*;
 
 public class MainScreen extends JFrame {
     private City city;
+    private int maxAccross = 5;
 
     public MainScreen(City city) throws IOException {
         super(city.getDisplayName());
@@ -25,6 +22,7 @@ public class MainScreen extends JFrame {
 
         add(currentWeather(), BorderLayout.NORTH);
         add(currentOutfit(), BorderLayout.CENTER);
+        add(futureWeather(), BorderLayout.SOUTH);
     }
 
     private JPanel currentWeather() throws IOException {
@@ -39,7 +37,7 @@ public class MainScreen extends JFrame {
 
         // creating left side of top of screen
         // large label for temp
-        JLabel tempText = new JLabel(city.getCurrent().getOverall() + "°");
+        JLabel tempText = new JLabel(city.getCurrent().getRealFeel() + "°");
         tempText.setFont(StyleGuide.getLargeFont());
         left.add(tempText);
         // weather description
@@ -67,7 +65,7 @@ public class MainScreen extends JFrame {
         right.add(locationButton);
 
         // weather icon
-        BufferedImage weathIconTmp = ImageIO.read(city.getCurrent().getWeatheryIcon());
+        BufferedImage weathIconTmp = ImageIO.read(city.getCurrent().getRecommendation().getWeatherIcon());
         Image weathIcon = weathIconTmp.getScaledInstance(40,40,Image.SCALE_SMOOTH);
         JLabel weathIconLabel = new JLabel(new ImageIcon(weathIcon));
         right.add(weathIconLabel);
@@ -104,11 +102,80 @@ public class MainScreen extends JFrame {
         return outfit;
     }
 
-    public static void main(String[] args) throws java.io.IOException {
-        Weather w = new Weather(StyleGuide.getSunnyIcon(), StyleGuide.getSunnyIcon(),
-                new Clothing(StyleGuide.getUmbrellaIcon(), StyleGuide.gettShirtIcon(),
-                        StyleGuide.getShortShortsIcon(), StyleGuide.getSearchIcon()),
-                "Monday", new Date(), 10, "Sunny", 18, 20, 10, 20);
+    private JPanel futureWeather() throws IOException {
+        JTabbedPane tabbedPane = new JTabbedPane();
+        BufferedImage accessoryIconTmp = ImageIO.read(city.getCurrent().getRecommendation().getAccesoriesIcon());
+        Image accessoryIcon = accessoryIconTmp.getScaledInstance(50,50,Image.SCALE_SMOOTH);
+        ImageIcon icon = new ImageIcon(accessoryIcon);
+
+        JComponent hourly = timeWeather(true);
+        hourly.setPreferredSize(new Dimension(StyleGuide.getScreenWidth()-10, 70));
+        tabbedPane.addTab("Hourly", icon, hourly,
+                "Hourly weather");
+        tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
+
+        JComponent weekly = timeWeather(false);
+        tabbedPane.addTab("Weekly", icon, weekly,
+                "Weekly weather");
+        tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
+
+        JPanel x = new JPanel();
+        x.add(tabbedPane);
+        return x;
+    }
+
+    public JComponent timeWeather(boolean hourly) throws IOException {
+        JComponent weath = new JLabel();
+        weath.setLayout(new GridLayout(3, maxAccross));
+
+        JLabel l;
+        for (int i = 0; i < maxAccross; i++) {
+            l = new JLabel((hourly) ? hourLab(city.getDaily().get(0)) : weekLab(city.getWeekly().get(0)));
+            l.setFont(StyleGuide.getSmallFont());
+            l.setHorizontalAlignment(SwingConstants.CENTER);
+            weath.add(l);
+        }
+        for (int i = 0; i < maxAccross; i++) {
+            BufferedImage iconTmp = ImageIO.read(city.getDaily().get(0).getRecommendation().getMainIcon());
+            Image icon = iconTmp.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+            weath.add(new JLabel(new ImageIcon(icon)));
+        }
+        for (int i = 0; i < maxAccross; i++) {
+            l = new JLabel((hourly) ? hourTemp(city.getDaily().get(0)) : weekTemp(city.getWeekly().get(0)));
+            l.setFont(StyleGuide.getSmallFont());
+            l.setHorizontalAlignment(SwingConstants.RIGHT);
+            weath.add(l);
+        }
+
+        return weath;
+    }
+
+    private String hourLab(Weather x) {
+        return x.getHour() + "00";
+    }
+    private String hourTemp(Weather x) {
+        return x.getOverall() + "";
+    }
+    private String weekLab(Weather x) {
+        return x.getWeekDay();
+    }
+    private String weekTemp(Weather x) {
+        return x.getHighLow();
+    }
+
+    public static void main(String[] args) throws Exception {
+
+        Map<String, String> f = new HashMap<>();
+        f.put("Temperature", "17.8");
+        f.put("WeatherText", "Cloudy");
+        f.put("WeatherIcon", "7");
+
+
+        Weather w = new Weather(
+                Recommender.recommend(f),
+                "Monday", new Date(), 10, f.get("WeatherText"),
+                Float.parseFloat(f.get("Temperature")), 20, 10,
+                Float.parseFloat(f.get("Temperature")));
         ArrayList we = new ArrayList<Weather>();
         we.add(w);
 
@@ -116,6 +183,7 @@ public class MainScreen extends JFrame {
         City c = new City("Test", we, we, w, 20, 10);
         MainScreen gui = new MainScreen(c);
         gui.setVisible(true);
+        System.out.println(Recommender.recommend(Fetcher.fetchCurrent(327200)));
     }
 
 

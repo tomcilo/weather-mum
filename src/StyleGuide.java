@@ -5,6 +5,9 @@ import java.awt.*;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 public final class StyleGuide {
     private static final int screenWidth = 375;
@@ -45,7 +48,29 @@ public final class StyleGuide {
     private static final File snowingIcon = new File("icons/snowingIcon.png");
     private static final File windyIcon = new File("icons/windyIcon.png");
     private static final File trashCan = new File("icons/trashcanIcon.png");
+    private static final File emptyIcon = new File("icons/emptyIcon.png");
 
+    private static final List<Integer> sunny = Arrays.asList(new Integer[] {1,2,33,34,30});
+    private static final List<Integer> partlyCloudy = Arrays.asList(new Integer[] {3,4,5,35,36,37});
+    private static final List<Integer> cloudy = Arrays.asList(new Integer[] {6,7,8,11,31,38});
+    private static final List<Integer> rain = Arrays.asList(new Integer[] {12,13,14,18,39,40});
+    private static final List<Integer> thunderstorm = Arrays.asList(new Integer[] {15,16,17,41,42});
+    private static final List<Integer> snow = Arrays.asList(new Integer[] {19,20,21,22,23,24,25,26,29,43,44});
+    private static final List<Integer> wind = Arrays.asList(new Integer[] {32});
+
+    public static List<Integer> getSunny() { return sunny; }
+
+    public static List<Integer> getPartlyCloudy() { return partlyCloudy; }
+
+    public static List<Integer> getCloudy() { return cloudy; }
+
+    public static List<Integer> getRain() { return rain; }
+
+    public static List<Integer> getThunderstorm() { return thunderstorm; }
+
+    public static List<Integer> getSnow() { return snow; }
+
+    public static List<Integer> getWind() { return wind; }
 
     public static int getScreenWidth() {
         return screenWidth;
@@ -167,6 +192,10 @@ public final class StyleGuide {
 
     public static File getTrashCan() {
         return trashCan;
+    }
+
+    public static File getEmptyIcon() {
+        return emptyIcon;
     }
 
     public static Color getPrimaryBlue() {
