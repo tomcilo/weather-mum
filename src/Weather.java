@@ -3,23 +3,19 @@ import java.nio.file.Path;
 import java.util.Date;
 
 public class Weather {
-    private File weatheryIcon;
-    private File mainIcon;
     private Clothing recommendation;
     private String weekDay;
     private Date date;
     private int hour;
     private String description;
-    private int realFeel;
-    private int high;
-    private int low;
-    private int overall;
+    private float realFeel;
+    private float high;
+    private float low;
+    private float overall;
 
-    public Weather(File weatheryIcon, File clotheryIcon, Clothing recommendation,
+    public Weather(Clothing recommendation,
                    String weekDay, Date date, int hour, String description,
-                   int realFeel, int high, int low, int overall) {
-        this.weatheryIcon = weatheryIcon;
-        this.mainIcon = clotheryIcon;
+                   float realFeel, float high, float low, float overall) {
         this.recommendation = recommendation;
         this.weekDay = weekDay;
         this.date = date;
@@ -29,14 +25,6 @@ public class Weather {
         this.high = high;
         this.low = low;
         this.overall = overall;
-    }
-
-    public File getWeatheryIcon() {
-        return weatheryIcon;
-    }
-
-    public File getMainIcon() {
-        return mainIcon;
     }
 
     public Clothing getRecommendation() {
@@ -59,21 +47,21 @@ public class Weather {
         return description;
     }
 
-    public int getRealFeel() {
+    public float getRealFeel() {
         return realFeel;
     }
 
-    public int getHigh() {
+    public float getHigh() {
         return high;
     }
 
-    public int getLow() {
+    public float getLow() {
         return low;
     }
 
-    public int getOverall() {
+    public float getOverall() {
         return overall;
     }
 
-    public String getHighLow() { return low + "°/" + high + "°"; }
+    public String getHighLow() { return Math.round(low)+ "°/" + Math.round(high) + "°"; }
 }
