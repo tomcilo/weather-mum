@@ -27,7 +27,7 @@ public class AppManager {
         //mainFrame.setVisible(true);
         cityListScreen.setVisible(true);
     }
-    
+
     public static void main(String[] args) throws IOException {
         AppManager appManager = new AppManager();
         appManager.setCityListScreenVisible();
