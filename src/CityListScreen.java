@@ -4,16 +4,15 @@ import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 
-public class CityListScreen extends JFrame {
+public class CityListScreen extends JPanel {
 
     DefaultListModel<String> model;
 
     CityListScreen()
     {
-        super("City Screen");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        LayoutManager lm = new GridLayout(5,1);
         setSize(StyleGuide.getScreenWidth(),StyleGuide.getScreenHeight());
-
+        setLayout(new BorderLayout());
         model = new DefaultListModel<>();
         model.addElement("Cambridge");
         model.addElement("London");
@@ -57,7 +56,10 @@ public class CityListScreen extends JFrame {
 
     }
     public static void main(String[] args) {
-        JFrame city = new CityListScreen();
+        JFrame city = new JFrame();
+        city.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        city.setSize(StyleGuide.getScreenWidth(),StyleGuide.getScreenHeight());
         city.setVisible(true);
+        city.add(new CityListScreen());
     }
 }

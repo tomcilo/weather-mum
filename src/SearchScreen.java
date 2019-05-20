@@ -14,16 +14,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class SearchScreen extends JFrame  {
+public class SearchScreen extends JPanel  {
     JTextField tf;
     DefaultListModel<String> model;
 
     SearchScreen()
     {
-        super("Search Screen");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(StyleGuide.getScreenWidth(),StyleGuide.getScreenHeight());
-
+        setLayout(new BorderLayout());
 
         add(createSearchPanel(),BorderLayout.NORTH);
 
@@ -142,6 +140,15 @@ public class SearchScreen extends JFrame  {
         Border tb = BorderFactory.createTitledBorder(etch,title);
         ((TitledBorder) tb).setTitleFont(StyleGuide.getRegularFont());
         component.setBorder(tb);
+
+    }
+
+    public static void main(String[] args) {
+        JFrame search = new JFrame();
+        search.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        search.setSize(StyleGuide.getScreenWidth(),StyleGuide.getScreenHeight());
+        search.add(new SearchScreen());
+        search.setVisible(true);
 
     }
 
