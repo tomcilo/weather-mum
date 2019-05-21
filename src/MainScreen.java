@@ -12,9 +12,12 @@ public class MainScreen extends JPanel {
     private City city;
     private int maxAccross = 5;
 
-    public MainScreen(City city) throws IOException {
+    private AppManager mainManager;
+
+    public MainScreen(City city, AppManager mainManager) throws IOException {
         //super(city.getDisplayName());
         this.city = city;
+        this.mainManager = mainManager;
 
         //setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -164,6 +167,7 @@ public class MainScreen extends JPanel {
         return x.getHighLow();
     }
 
+    /*
     public static void main(String[] args) throws Exception {
 
         Map<String, String> f = new HashMap<>();
@@ -186,6 +190,7 @@ public class MainScreen extends JPanel {
         gui.setVisible(true);
         System.out.println(Recommender.recommend(Fetcher.fetchCurrent(327200)));
     }
+    */
 
 
 

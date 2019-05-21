@@ -16,7 +16,7 @@ public class AppManager {
     public AppManager() throws IOException {
         mainFrame = new JFrame();
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        mainFrame.setSize(2*StyleGuide.getScreenWidth(), StyleGuide.getScreenHeight());
+        mainFrame.setSize(3*StyleGuide.getScreenWidth(), StyleGuide.getScreenHeight());
 
         mainFrame.setLayout(new GridLayout(1, 3));
 
@@ -35,11 +35,11 @@ public class AppManager {
         City c = new City("Test", we, we, w, 20, 10);
 
 
-        cityListScreen = new CityListScreen();
+        cityListScreen = new CityListScreen(this);
         mainFrame.add(cityListScreen);
-        searchScreen = new SearchScreen();
+        searchScreen = new SearchScreen(this);
         mainFrame.add(searchScreen);
-        mainScreen = new MainScreen(c);
+        mainScreen = new MainScreen(c, this);
         mainFrame.add(mainScreen);
         mainFrame.setVisible(true);
     }

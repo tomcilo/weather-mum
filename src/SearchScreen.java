@@ -9,17 +9,22 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class SearchScreen extends JPanel  {
-    JTextField tf;
-    DefaultListModel<String> model;
+    private JTextField tf;
+    private DefaultListModel<String> model;
 
-    SearchScreen()
+    private AppManager mainManager;
+
+    SearchScreen(AppManager mainManager)
     {
+        this.mainManager = mainManager;
+
         setSize(StyleGuide.getScreenWidth(),StyleGuide.getScreenHeight());
         setLayout(new BorderLayout());
 
@@ -143,11 +148,12 @@ public class SearchScreen extends JPanel  {
 
     }
 
-    public static void main(String[] args) {
+
+    public static void main(String[] args) throws IOException {
         JFrame search = new JFrame();
         search.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         search.setSize(StyleGuide.getScreenWidth(),StyleGuide.getScreenHeight());
-        search.add(new SearchScreen());
+        search.add(new SearchScreen(new AppManager()));
         search.setVisible(true);
 
     }

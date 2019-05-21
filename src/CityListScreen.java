@@ -6,10 +6,14 @@ import java.awt.*;
 
 public class CityListScreen extends JPanel {
 
-    DefaultListModel<String> model;
+    private DefaultListModel<String> model;
 
-    CityListScreen()
+    private AppManager mainManager;
+
+    CityListScreen(AppManager mainManager)
     {
+        this.mainManager = mainManager;
+
         LayoutManager lm = new GridLayout(5,1);
         setSize(StyleGuide.getScreenWidth(),StyleGuide.getScreenHeight());
         setLayout(new BorderLayout());
@@ -55,6 +59,7 @@ public class CityListScreen extends JPanel {
         component.setBorder(tb);
 
     }
+    /*
     public static void main(String[] args) {
         JFrame city = new JFrame();
         city.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -62,4 +67,5 @@ public class CityListScreen extends JPanel {
         city.setVisible(true);
         city.add(new CityListScreen());
     }
+    */
 }
