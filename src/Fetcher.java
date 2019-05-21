@@ -37,6 +37,9 @@ public class Fetcher {
 	// %d location_code
 	// %s api_key
 	private static final String cityname_api = "http://dataservice.accuweather.com/locations/v1/%d?apikey=%s&details=true";
+	// %d location code
+	// %s api_key
+	private static final String hourly_api = "http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/%d?apikey=%s&details=true&metric=true";
 
 	
 	private static String __get(JSONObject obj, String a) {
@@ -130,8 +133,30 @@ public class Fetcher {
 	}
 
 	public static List<Map<String, String>> fetchHourlyForecast(int location_code) throws Exception {
+		String response = download(String.format(hourly_api, location_code, api_key));
 		
-		return new ArrayList<Map<String, String>>();
+		List<Map<String, String>> ret = new ArrayList<Map<String, String>>();
+
+		JSONArray arr = (JSONArray)(new JSONParser().parse(response));
+
+		for (int i = 0; i < arr.size(); i++) {
+			Map<String, String> map = new HashMap<String, String>();
+
+			JSONObject js_map = (JSONObject)arr.get(i);
+
+			map.put("RealFeelTemperatureLow", __get(js_map, "RealFeelTemperature", "Value").toString());
+			map.put("RealFeelTemperatureHigh", __get(js_map, "RealFeelTemperature", "Value").toString());
+			map.put("RealFeelTemperature", __get(js_map, "RealFeelTemperature", "Value").toString());
+			map.put("date", __get(js_map, "DateTime"));
+			map.put("WeatherText", __get(js_map, "IconPhrase"));
+			map.put("Temperature", __get(js_map, "RealFeelTemperature", "Value"));
+			map.put("WeatherIcon", __get(js_map, "WeatherIcon"));
+
+
+			ret.add(map);
+		}
+
+		return ret;
 	}
 
 	public static List<Map<String, String>> fetchForecast(int location_code) throws Exception {
@@ -147,10 +172,14 @@ public class Fetcher {
 
 			JSONObject js_map = (JSONObject)arr.get(i);
 		
-			// TODO: add the rest
-			map.put("RealFeelMin", __get(js_map, "RealFeelTemperature", "Minimum", "Value").toString());
-
-			
+			map.put("RealFeelTemperatureLow", __get(js_map, "RealFeelTemperature", "Minimum", "Value").toString());
+			map.put("RealFeelTemperatureHigh", __get(js_map, "RealFeelTemperature", "Maximum", "Value").toString());
+			map.put("RealFeelTemperature", __get(js_map, "RealFeelTemperature", "Maximum", "Value").toString());
+			map.put("date", __get(js_map, "Date"));
+			map.put("WeatherText", __get(js_map, "Day", "IconPhrase"));
+			map.put("Temperature", __get(js_map, "RealFeelTemperature", "Maximum", "Value"));
+			map.put("WeatherIcon", __get(js_map, "Day", "Icon"));
+	
 			ret.add(map);
 		}
 
@@ -173,10 +202,13 @@ public class Fetcher {
 	
 //		System.out.printf("\n\n\nfetchCurretnCity()\n   %s\n", fetchCurrentCity());
 
-//		System.out.printf("\n\n\nfetchForecast(32700 -- Cambridge):\n   %s", fetchForecast(327200));
+		List<Map<String, String>> a = fetchForecast(327200);
+		System.out.printf("\n\n\nfetchForecast(32700 -- Cambridge):\n   %s", a);
 
-		System.out.printf("fetchCityName(327200 -- Cambridge):\n   %s\n", fetchCityName(327200));
+		Weather w = new Weather(a.get(0));
+
+		System.out.printf("\n\n\nfetchCityName(327200 -- Cambridge):\n   %s\n", fetchCityName(327200));
 	
-		System.out.printf("fetchForecast(327200 -- ");
+		System.out.printf("\n\n\nfetchHourlyForecast(327200 -- Cambridge:\n   %s\n", fetchHourlyForecast(327200));
 	}
 }
