@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 
 public class Fetcher {
 	// self explanatory
-	private static final String api_key = "o9cXUlvcTbP7A0qMPl9xUzPky3BO4MfD";
+	private static final String api_key = "ozq4DQYJniKkwQPLFEATA9kCGPRHA8Tl";
 	// %d location code
 	// %s api_key
 	private static final String current_api = "http://dataservice.accuweather.com/currentconditions/v1/%d?apikey=%s";
@@ -176,5 +176,7 @@ public class Fetcher {
 //		System.out.printf("\n\n\nfetchForecast(32700 -- Cambridge):\n   %s", fetchForecast(327200));
 
 		System.out.printf("fetchCityName(327200 -- Cambridge):\n   %s\n", fetchCityName(327200));
+	
+		System.out.printf("fetchForecast(327200 -- ");
 	}
 }
