@@ -67,7 +67,7 @@ public class MainScreen extends JPanel {
         locationButton.setIcon(locIcon);
         locationButton.setText(city.getDisplayName());
         locationButton.setHorizontalTextPosition(SwingConstants.RIGHT);
-        locationButton.setFont(StyleGuide.getRegularFont());
+        locationButton.setFont(StyleGuide.getLargeFont());
         locationButton.setBackground(StyleGuide.getPrimaryBlue());
         locationButton.setForeground(Color.white);
         locationButton.setUI(StyleGuide.getButtonStyle());
@@ -121,22 +121,21 @@ public class MainScreen extends JPanel {
         JTabbedPane tabbedPane = new JTabbedPane();
         tabbedPane.setBackground(StyleGuide.getBackgroundColor());
         BufferedImage accessoryIconTmp = ImageIO.read(city.getCurrent().getRecommendation().getAccesoriesIcon());
-        Image accessoryIcon = accessoryIconTmp.getScaledInstance(50,50,Image.SCALE_SMOOTH);
-        ImageIcon icon = new ImageIcon(accessoryIcon);
 
         JComponent hourly = timeWeather(true);
         hourly.setPreferredSize(new Dimension(StyleGuide.getScreenWidth()-10, 70));
-        tabbedPane.addTab("Hourly", icon, hourly,
+        tabbedPane.addTab("Hourly", null, hourly,
                 "Hourly weather");
+        tabbedPane.setFont(StyleGuide.getRegularFont());
         tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
 
         JComponent weekly = timeWeather(false);
-        tabbedPane.addTab("Weekly", icon, weekly,
+        tabbedPane.addTab("Weekly", null, weekly,
                 "Weekly weather");
         tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
-
         JPanel x = new JPanel();
         x.add(tabbedPane);
+        x.setBackground(StyleGuide.getBackgroundColor());
         return x;
     }
 
