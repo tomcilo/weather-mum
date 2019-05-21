@@ -62,6 +62,13 @@ public class CityListScreen extends JPanel {
         component.setBorder(tb);
 
     }
+
+
+    public void addCityToList(String cityName) {
+        model.addElement(cityName);
+        revalidate();
+        repaint();
+    }
     /*
     public static void main(String[] args) {
         JFrame city = new JFrame();

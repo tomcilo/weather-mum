@@ -43,25 +43,56 @@ public class AppManager {
         mainFrame.setVisible(true);
     }
 
+    private City createDummyCity(String cityName)
+    {
+        Weather w = new Weather(
+                new Clothing(StyleGuide.getUmbrellaIcon(), StyleGuide.gettShirtIcon(),
+                        StyleGuide.getShortsIcon(), StyleGuide.getShortsIcon(), StyleGuide.getSunnyIcon(), StyleGuide.getSunnyIcon()),
+                "Monday", new Date(), 10, "Sunny", 18, 20, 10, 20);
+        ArrayList we = new ArrayList<Weather>();
+        we.add(w);
+
+
+        City c = new City(cityName, we, we, w, 20, 10);
+        return c;
+    }
+
+    private void goToScreen(JPanel dest) {
+        mainFrame.remove(currentPanel);
+        mainFrame.add(dest);
+        currentPanel = dest;
+        mainFrame.revalidate();
+        mainFrame.repaint();
+    }
+
     public void goToCityListScreen() {
         System.out.println("I'll go to the CityListScreen");
+        goToScreen(cityListScreen);
     }
 
 
     public void searchScreenCitySelected(String cityName) {
         System.out.println(cityName + " was selected in the SearchScreen");
+        cityListScreen.addCityToList(cityName);
+        goToScreen(cityListScreen);
     }
 
     public void cityListScreenCitySelected(String cityName) {
         System.out.println(cityName + " was selected in the CityListScreen");
+        try {
+            mainScreen = new MainScreen(createDummyCity(cityName), this);
+        } catch (Exception e) {
+            System.out.println("Seems like there was an exception");
+            e.printStackTrace();
+            System.out.println("Not going there");
+            return;
+        }
+        goToScreen(mainScreen);
     }
 
     public void goToSearchScreen() {
         System.out.println("I'll go to the SearchScreen");
-        mainFrame.remove(cityListScreen);
-        mainFrame.add(searchScreen);
-        currentPanel = searchScreen;
-        mainFrame.setVisible(true);
+        goToScreen(searchScreen);
     }
 
 
