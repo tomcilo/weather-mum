@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 
 public class Fetcher {
 	// self explanatory
-	private static final String api_key = "sAITtV5AClfBKltmGkAVbufG0IAxFsue";
+	private static final String api_key = "f8nGdthnLGg9rvkUAduJ7SGru28KzuI4";
 	// %d location code
 	// %s api_key
 	private static final String current_api = "http://dataservice.accuweather.com/currentconditions/v1/%d?apikey=%s";
@@ -83,13 +83,13 @@ public class Fetcher {
 	}
 
 	// TODO: documentation
-	public static List<String> fetchAutocompletedCities(String prefix) throws Exception {
+	public static List<City> fetchAutocompletedCities(String prefix) throws Exception {
 		String response = download(String.format(autocomplete_api, api_key, prefix));
 	
 
 		JSONArray ja = (JSONArray)(new JSONParser().parse(response));
 		
-		List<String> ret = new ArrayList<String>();
+		List<City> ret = new ArrayList<City>();
 		for (int i = 0; i < ja.size(); i++) {
 			JSONObject obj = (JSONObject)ja.get(i);
 			JSONObject js_country = (JSONObject)obj.get("Country");
@@ -101,8 +101,7 @@ public class Fetcher {
 			String country = js_country.get("LocalizedName").toString();
 			String area    = js_area.get("ID").toString();
 
-			//ret.add(Integer.parseInt(code));
-			ret.add(name);
+			ret.add(new City(Integer.parseInt(code)));
 		}
 
 		return ret;
@@ -147,12 +146,12 @@ public class Fetcher {
 
 	// Only for testing
 	public static void main(String[] args) throws Exception {
-		System.out.printf("fetchCurrent(327200 -- Cambridge):\n   %s\n", fetchCurrent(327200));
+//		System.out.printf("fetchCurrent(327200 -- Cambridge):\n   %s\n", fetchCurrent(327200));
 
 		System.out.printf("\n\n\nfetchAutocompletedCities(\"bel\")\n   %s\n", fetchAutocompletedCities("beg"));
 	
-		System.out.printf("\n\n\nfetchCurretnCity()\n   %s\n", fetchCurrentCity());
+//		System.out.printf("\n\n\nfetchCurretnCity()\n   %s\n", fetchCurrentCity());
 
-		System.out.printf("\n\n\nfetchForecast(32700 -- Cambridge):\n   %s", fetchForecast(327200));
+//		System.out.printf("\n\n\nfetchForecast(32700 -- Cambridge):\n   %s", fetchForecast(327200));
 	}
 }

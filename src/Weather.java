@@ -12,6 +12,10 @@ public class Weather {
     private float high;
     private float low;
     private float overall;
+	
+	public Weather() {
+	
+	}
 
     public Weather(Clothing recommendation,
                    String weekDay, Date date, int hour, String description,
