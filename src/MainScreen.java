@@ -15,6 +15,7 @@ public class MainScreen extends JPanel {
 
     public MainScreen(City city, AppManager mainManager) throws IOException {
         //super(city.getDisplayName());
+        setLayout(new BorderLayout());
         this.city = city;
         this.mainManager = mainManager;
 

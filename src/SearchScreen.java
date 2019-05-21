@@ -47,7 +47,7 @@ public class SearchScreen extends JPanel  {
     {
         JPanel heading = new JPanel();
         heading.setBackground(StyleGuide.getBackgroundColor());
-        tf = new JTextField(15);
+        tf = new JTextField(12);
         tf.setFont(StyleGuide.getRegularFont());
 
 
@@ -76,7 +76,8 @@ public class SearchScreen extends JPanel  {
         search.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                updateCityPanel(tf.getText());
+                if(tf.getText().length()!=0)
+                    updateCityPanel(tf.getText());
             }
         });
         heading.add(search);
