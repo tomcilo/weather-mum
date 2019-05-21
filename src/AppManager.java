@@ -71,16 +71,16 @@ public class AppManager {
     }
 
 
-    public void searchScreenCitySelected(String cityName) {
-        System.out.println(cityName + " was selected in the SearchScreen");
-        cityListScreen.addCityToList(cityName);
+    public void searchScreenCitySelected(City city) {
+        System.out.println(city + " was selected in the SearchScreen");
+        cityListScreen.addCityToList(city);
         goToScreen(cityListScreen);
     }
 
-    public void cityListScreenCitySelected(String cityName) {
-        System.out.println(cityName + " was selected in the CityListScreen");
+    public void cityListScreenCitySelected(City city) {
+        System.out.println(city + " was selected in the CityListScreen");
         try {
-            mainScreen = new MainScreen(createDummyCity(cityName), this);
+            mainScreen = new MainScreen(createDummyCity(city.toString()), this);
         } catch (Exception e) {
             System.out.println("Seems like there was an exception");
             e.printStackTrace();

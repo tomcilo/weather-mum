@@ -17,6 +17,7 @@ public class CachedFetcher {
 				citynames.put(code, Fetcher.fetchCityName(code));
 		}
 		catch (Exception e) {
+			e.printStackTrace();
 			System.out.printf("there was an error, too bad\n");
 		}
 		return citynames.get(code);

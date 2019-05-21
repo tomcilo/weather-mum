@@ -18,7 +18,7 @@ import java.util.stream.*;
 
 public class SearchScreen extends JPanel  {
     private JTextField tf;
-    private DefaultListModel<String> model;
+    private DefaultListModel<City> model;
 
     private AppManager mainManager;
 
@@ -92,8 +92,8 @@ public class SearchScreen extends JPanel  {
         model.clear();
 
         try {
-            List<String> cityNames = Fetcher.fetchAutocompletedCities(prefix).stream().map(x -> x.getDisplayName()).collect(Collectors.toList());
-            for(String s:cityNames)
+            List<City> cityNames = Fetcher.fetchAutocompletedCities(prefix);//.stream().map(x -> x.getDisplayName()).collect(Collectors.toList());
+            for(City s:cityNames)
             {
                 model.addElement(s);
             }
@@ -106,15 +106,15 @@ public class SearchScreen extends JPanel  {
         addBorder(cities,"Cities");
         cities.setLayout(new GridLayout(1,1));
         List<City> cityList = new ArrayList<>();
-        model = new DefaultListModel<String>();
-        JList<String> cityJList = new JList<String>(model);
+        model = new DefaultListModel<City>();
+        JList<City> cityJList = new JList<City>(model);
         cityJList.setCellRenderer(new CityListRenderer(cityJList, false, null));
         cityJList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
 
-                JList<String> list = (JList<String>) e.getSource();
-                String c = list.getSelectedValue();
+                JList<City> list = (JList<City>) e.getSource();
+                City c = list.getSelectedValue();
 
                 mainManager.searchScreenCitySelected(c);
             }

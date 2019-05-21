@@ -6,7 +6,7 @@ import java.awt.*;
 
 public class CityListScreen extends JPanel {
 
-    private DefaultListModel<String> model;
+    private DefaultListModel<City> model;
 
     private AppManager mainManager;
 
@@ -18,8 +18,8 @@ public class CityListScreen extends JPanel {
         setSize(StyleGuide.getScreenWidth(),StyleGuide.getScreenHeight());
         setLayout(new BorderLayout());
         model = new DefaultListModel<>();
-        model.addElement("Cambridge");
-        model.addElement("London");
+        //model.addElement("Cambridge");
+        //model.addElement("London");
         add(createHeader(), BorderLayout.NORTH);
         add(createList(), BorderLayout.CENTER);
 
@@ -46,7 +46,7 @@ public class CityListScreen extends JPanel {
         list.setBackground(StyleGuide.getBackgroundColor());
         addBorder(list, "Saved Cities");
         list.setLayout(new GridLayout(1,1));
-        JList<String> cities = new JList<>(model);
+        JList<City> cities = new JList<City>(model);
 
         cities.setCellRenderer(new CityListRenderer(cities, true, mainManager));
         //cities.addListSelectionListener(e -> mainManager.cityListScreenCitySelected(cities.getSelectedValue()));
@@ -64,8 +64,8 @@ public class CityListScreen extends JPanel {
     }
 
 
-    public void addCityToList(String cityName) {
-        model.addElement(cityName);
+    public void addCityToList(City city) {
+        model.addElement(city);
         revalidate();
         repaint();
     }
