@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.*;
+import java.util.stream.*;
 
 public class SearchScreen extends JPanel  {
     private JTextField tf;
@@ -90,7 +92,7 @@ public class SearchScreen extends JPanel  {
         model.clear();
 
         try {
-            List<String> cityNames = Fetcher.fetchAutocompletedCities(prefix);
+            List<String> cityNames = Fetcher.fetchAutocompletedCities(prefix).stream().map(x -> x.getDisplayName()).collect(Collectors.toList());
             for(String s:cityNames)
             {
                 model.addElement(s);
