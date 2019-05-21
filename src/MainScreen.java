@@ -16,12 +16,10 @@ public class MainScreen extends JPanel {
     private AppManager mainManager;
 
     public MainScreen(City city, AppManager mainManager) throws IOException {
-        //super(city.getDisplayName());
         setLayout(new BorderLayout());
         this.city = city;
         this.mainManager = mainManager;
-
-        //setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setBackground(StyleGuide.getBackgroundColor());
 
         setSize(StyleGuide.getScreenWidth(), StyleGuide.getScreenHeight());
 
@@ -32,14 +30,16 @@ public class MainScreen extends JPanel {
 
     private JPanel currentWeather() throws IOException {
         JPanel weath =  new JPanel();
+        weath.setBackground(StyleGuide.getBackgroundColor());
         weath.setLayout(new GridLayout(1,2));
         weath.setBorder(new EmptyBorder(10, 10, 10, 10));
 
         JPanel left = new JPanel();
         left.setLayout(new GridLayout(3,1));
+        left.setBackground(StyleGuide.getBackgroundColor());
         JPanel right = new JPanel();
         right.setLayout(new GridLayout(2,1));
-
+        right.setBackground(StyleGuide.getBackgroundColor());
         // creating left side of top of screen
         // large label for temp
         JLabel tempText = new JLabel(city.getCurrent().getRealFeel() + "°");
@@ -63,10 +63,15 @@ public class MainScreen extends JPanel {
         Image locIconTmp2 = locIconTmp.getScaledInstance(20,20,Image.SCALE_SMOOTH);
         Icon locIcon = new ImageIcon(locIconTmp2);
         JButton locationButton = new JButton();
+
         locationButton.setIcon(locIcon);
         locationButton.setText(city.getDisplayName());
         locationButton.setHorizontalTextPosition(SwingConstants.RIGHT);
-        locationButton.setFont(StyleGuide.getLargeFont());
+        locationButton.setFont(StyleGuide.getRegularFont());
+        locationButton.setBackground(StyleGuide.getPrimaryBlue());
+        locationButton.setForeground(Color.white);
+        locationButton.setUI(StyleGuide.getButtonStyle());
+
         locationButton.addActionListener(e -> mainManager.goToCityListScreen());
 
         right.add(locationButton);
@@ -85,6 +90,7 @@ public class MainScreen extends JPanel {
 
     private JPanel currentOutfit() throws IOException {
         JPanel outfit =  new JPanel();
+        outfit.setBackground(StyleGuide.getBackgroundColor());
         outfit.setLayout(new GridLayout(4,1));
 
         //System.out.println(city.getCurrent().getRecommendation().getAccesoriesIcon().toURI());
@@ -94,12 +100,12 @@ public class MainScreen extends JPanel {
         outfit.add(accessoryIconLabel);
 
         BufferedImage topIconTmp = ImageIO.read(city.getCurrent().getRecommendation().getTopIcon());
-        Image topIcon = topIconTmp.getScaledInstance(50,50,Image.SCALE_SMOOTH);
+        Image topIcon = topIconTmp.getScaledInstance(80,80,Image.SCALE_SMOOTH);
         JLabel topIconLabel = new JLabel(new ImageIcon(topIcon));
         outfit.add(topIconLabel);
 
         BufferedImage bottomIconTmp = ImageIO.read(city.getCurrent().getRecommendation().getBottomIcon());
-        Image bottomIcon = bottomIconTmp.getScaledInstance(50,50,Image.SCALE_SMOOTH);
+        Image bottomIcon = bottomIconTmp.getScaledInstance(80,80,Image.SCALE_SMOOTH);
         JLabel bottomIconLabel = new JLabel(new ImageIcon(bottomIcon));
         outfit.add(bottomIconLabel);
 
@@ -113,6 +119,7 @@ public class MainScreen extends JPanel {
 
     private JPanel futureWeather() throws IOException {
         JTabbedPane tabbedPane = new JTabbedPane();
+        tabbedPane.setBackground(StyleGuide.getBackgroundColor());
         BufferedImage accessoryIconTmp = ImageIO.read(city.getCurrent().getRecommendation().getAccesoriesIcon());
         Image accessoryIcon = accessoryIconTmp.getScaledInstance(50,50,Image.SCALE_SMOOTH);
         ImageIcon icon = new ImageIcon(accessoryIcon);

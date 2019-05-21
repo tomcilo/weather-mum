@@ -35,7 +35,7 @@ public class SearchScreen extends JPanel  {
         add(createCityPanel(),BorderLayout.CENTER);
     }
 
-    public JButton createExit()
+    private JButton createExit()
     {
         JButton exit = new JButton("Back");
         exit.setFont(StyleGuide.getSmallFont());
@@ -130,18 +130,6 @@ public class SearchScreen extends JPanel  {
         return cities;
     }
 
-    private City createDummyCity() throws ParseException {
-        Weather w = new Weather(
-                new Clothing(StyleGuide.getUmbrellaIcon(), StyleGuide.gettShirtIcon(),
-                        StyleGuide.getShortsIcon(), StyleGuide.getShortsIcon(), StyleGuide.getSunnyIcon(), StyleGuide.getSunnyIcon()),
-                "2019-05-21T07:00:00+01:00", 10, "Sunny", 18, 20, 10, 20);
-        ArrayList we = new ArrayList<Weather>();
-        we.add(w);
-
-
-        City c = new City("Test", we, we, w, 20, 10);
-        return c;
-    }
 
     private void addBorder(JComponent component, String title) {
         Border etch = BorderFactory.createEtchedBorder(EtchedBorder.LOWERED);
