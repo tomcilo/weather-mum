@@ -5,6 +5,7 @@ import java.awt.*;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -57,6 +58,9 @@ public final class StyleGuide {
     private static final List<Integer> thunderstorm = Arrays.asList(new Integer[] {15,16,17,41,42});
     private static final List<Integer> snow = Arrays.asList(new Integer[] {19,20,21,22,23,24,25,26,29,43,44});
     private static final List<Integer> wind = Arrays.asList(new Integer[] {32});
+    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("d E");
+
+    public static SimpleDateFormat getDateFormat() { return dateFormat; }
 
     public static List<Integer> getSunny() { return sunny; }
 

@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="217075a7-9423-400c-ae32-23327800ee5e" name="Default Changelist" comment="">
+=======
+    <list default="true" id="e59fe63b-bb2e-4359-a7bb-71a669f2e187" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/json_simple_1_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/json_simple_1_11.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/json_simple_1_12.xml" beforeDir="false" />
+>>>>>>> f89d495ef082c8efd0db2e5082d200bacce659a5
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/weather-mum/AppManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/weather-mum/AppManager.class" afterDir="false" />
@@ -10,14 +18,20 @@
       <change beforePath="$PROJECT_DIR$/out/production/weather-mum/CityListRenderer$CustomLabel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/weather-mum/CityListRenderer$CustomLabel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/weather-mum/CityListRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/weather-mum/CityListRenderer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/weather-mum/CityListScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/weather-mum/CityListScreen.class" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/out/production/weather-mum/Clothing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/weather-mum/Clothing.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/weather-mum/Fetcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/weather-mum/Fetcher.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/weather-mum/MainScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/weather-mum/MainScreen.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/weather-mum/Recommender.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/weather-mum/Recommender.class" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/out/production/weather-mum/Fetcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/weather-mum/Fetcher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/weather-mum/MainScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/weather-mum/MainScreen.class" afterDir="false" />
+>>>>>>> f89d495ef082c8efd0db2e5082d200bacce659a5
       <change beforePath="$PROJECT_DIR$/out/production/weather-mum/SearchScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/weather-mum/SearchScreen$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/weather-mum/SearchScreen$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/weather-mum/SearchScreen$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/weather-mum/SearchScreen$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/weather-mum/SearchScreen$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/weather-mum/SearchScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/weather-mum/SearchScreen.class" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/out/production/weather-mum/StyleGuide$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/weather-mum/StyleGuide$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/weather-mum/StyleGuide$StyledButtonUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/weather-mum/StyleGuide$StyledButtonUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/weather-mum/StyleGuide.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/weather-mum/StyleGuide.class" afterDir="false" />
@@ -28,6 +42,13 @@
       <change beforePath="$PROJECT_DIR$/src/CityListRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CityListRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CityListScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CityListScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SearchScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchScreen.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/out/production/weather-mum/Weather.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/weather-mum/Weather.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SearchScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StyleGuide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StyleGuide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Weather.java" afterDir="false" />
+>>>>>>> f89d495ef082c8efd0db2e5082d200bacce659a5
       <change beforePath="$PROJECT_DIR$/weather-mum.iml" beforeDir="false" afterPath="$PROJECT_DIR$/weather-mum.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -37,9 +58,40 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1346509338">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="335" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="335" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/SearchScreen.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="94">
@@ -119,22 +171,34 @@
                 <element signature="e#6837#6838#0" expanded="true" />
                 <element signature="e#6869#6870#0" expanded="true" />
               </folding>
+=======
+        <entry file="file://$PROJECT_DIR$/src/MainScreen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="107">
+              <caret line="177" column="28" lean-forward="true" selection-start-line="177" selection-start-column="28" selection-end-line="177" selection-end-column="28" />
+>>>>>>> f89d495ef082c8efd0db2e5082d200bacce659a5
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppManager.java">
+        <entry file="file://$PROJECT_DIR$/src/SearchScreen.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="483">
               <caret line="75" column="43" lean-forward="true" selection-start-line="75" selection-start-column="43" selection-end-line="75" selection-end-column="43" />
+=======
+            <state relative-caret-position="186">
+              <caret line="136" column="16" lean-forward="true" selection-start-line="136" selection-start-column="16" selection-end-line="136" selection-end-column="43" />
+>>>>>>> f89d495ef082c8efd0db2e5082d200bacce659a5
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CityListRenderer.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppManager.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="196">
               <caret line="59" selection-start-line="59" selection-end-line="59" />
               <folding>
@@ -142,32 +206,46 @@
                 <element signature="e#1062#2226#0" expanded="true" />
                 <element signature="e#2225#2226#0" expanded="true" />
               </folding>
+=======
+            <state relative-caret-position="-337">
+              <caret line="61" column="17" lean-forward="true" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
+>>>>>>> f89d495ef082c8efd0db2e5082d200bacce659a5
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CityListScreen.java">
+        <entry file="file://$PROJECT_DIR$/src/Fetcher.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="555">
               <caret line="67" column="29" lean-forward="true" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1619#1625#0" expanded="true" />
               </folding>
+=======
+            <state relative-caret-position="116">
+              <caret line="144" column="5" lean-forward="true" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="5" />
+>>>>>>> f89d495ef082c8efd0db2e5082d200bacce659a5
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/City.java">
+        <entry file="file://$PROJECT_DIR$/src/StyleGuide.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="241">
               <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
               <folding>
                 <element signature="e#1677#1678#0" expanded="true" />
                 <element signature="e#1715#1716#0" expanded="true" />
               </folding>
+=======
+            <state relative-caret-position="268">
+              <caret line="62" column="72" selection-start-line="62" selection-start-column="72" selection-end-line="62" selection-end-column="72" />
+>>>>>>> f89d495ef082c8efd0db2e5082d200bacce659a5
             </state>
           </provider>
         </entry>
@@ -175,6 +253,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CachedFetcher.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="240">
               <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
             </state>
@@ -207,12 +286,17 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
               <caret line="59" column="78" lean-forward="true" selection-start-line="59" selection-start-column="78" selection-end-line="59" selection-end-column="78" />
+=======
+            <state relative-caret-position="145">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
+>>>>>>> f89d495ef082c8efd0db2e5082d200bacce659a5
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+<<<<<<< HEAD
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -230,17 +314,21 @@
       <replace>temperature</replace>
     </replaceStrings>
   </component>
+=======
+>>>>>>> f89d495ef082c8efd0db2e5082d200bacce659a5
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/Fetcher.java" />
+        <option value="$PROJECT_DIR$/src/AppManager.java" />
+        <option value="$PROJECT_DIR$/src/SearchScreen.java" />
         <option value="$PROJECT_DIR$/src/StyleGuide.java" />
-        <option value="$PROJECT_DIR$/src/Clothing.java" />
-        <option value="$PROJECT_DIR$/src/Recommender.java" />
         <option value="$PROJECT_DIR$/src/Weather.java" />
         <option value="$PROJECT_DIR$/src/MainScreen.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/Fetcher.java" />
         <option value="$PROJECT_DIR$/src/City.java" />
         <option value="$PROJECT_DIR$/src/SearchScreen.java" />
@@ -248,20 +336,23 @@
         <option value="$PROJECT_DIR$/src/CityListScreen.java" />
         <option value="$PROJECT_DIR$/src/CityListRenderer.java" />
         <option value="$PROJECT_DIR$/src/CachedFetcher.java" />
+=======
+>>>>>>> f89d495ef082c8efd0db2e5082d200bacce659a5
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="467" />
-    <option name="y" value="21" />
-    <option name="width" value="990" />
-    <option name="height" value="795" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="207" />
+    <option name="y" value="23" />
+    <option name="width" value="972" />
+    <option name="height" value="798" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -272,33 +363,26 @@
             <path>
               <item name="weather-mum" type="b2602c69:ProjectViewProjectNode" />
               <item name="weather-mum" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="weather-mum" type="b2602c69:ProjectViewProjectNode" />
-              <item name="weather-mum" type="462c0819:PsiDirectoryNode" />
-              <item name="icons" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="weather-mum" type="b2602c69:ProjectViewProjectNode" />
-              <item name="weather-mum" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558440463820" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+=======
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558440779912" />
+>>>>>>> f89d495ef082c8efd0db2e5082d200bacce659a5
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -320,20 +404,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CityListScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CityListScreen" />
-      <module name="weather-mum" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Fetcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Fetcher" />
-      <module name="weather-mum" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MainScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainScreen" />
       <module name="weather-mum" />
@@ -341,27 +411,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SearchScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="SearchScreen" />
-      <module name="weather-mum" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.MainScreen" />
-      <item itemvalue="Application.Fetcher" />
-      <item itemvalue="Application.CityListScreen" />
-      <item itemvalue="Application.SearchScreen" />
       <item itemvalue="Application.AppManager" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.AppManager" />
-        <item itemvalue="Application.SearchScreen" />
-        <item itemvalue="Application.CityListScreen" />
         <item itemvalue="Application.MainScreen" />
-        <item itemvalue="Application.Fetcher" />
       </list>
     </recent_temporary>
   </component>
@@ -370,10 +427,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="217075a7-9423-400c-ae32-23327800ee5e" name="Default Changelist" comment="" />
-      <created>1558340026541</created>
+      <changelist id="e59fe63b-bb2e-4359-a7bb-71a669f2e187" name="Default Changelist" comment="" />
+      <created>1558439480265</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1558340026541</updated>
       <workItem from="1558433384807" duration="4707000" />
     </task>
@@ -417,50 +475,52 @@
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32810867" />
       <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="7" />
-      <window_info anchor="right" id="Maven" order="8" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12818792" />
+=======
+      <updated>1558439480265</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="207" y="23" width="972" height="798" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33010754" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Designer" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" weight="0.3286119" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32719547" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3286119" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3286119" />
-      <window_info anchor="right" id="Maven" order="0" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" />
-    </layout-to-restore>
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Maven Projects" />
+>>>>>>> f89d495ef082c8efd0db2e5082d200bacce659a5
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.desktop/javax/imageio/ImageIO.java" />
     <entry file="file://$PROJECT_DIR$/src/Recommender.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -557,10 +617,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/StyleGuide.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="62" column="72" selection-start-line="62" selection-start-column="72" selection-end-line="62" selection-end-column="72" />
+>>>>>>> f89d495ef082c8efd0db2e5082d200bacce659a5
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Fetcher.java">
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
           <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
@@ -597,17 +664,28 @@
             <element signature="e#1677#1678#0" expanded="true" />
             <element signature="e#1715#1716#0" expanded="true" />
           </folding>
+=======
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="144" column="5" lean-forward="true" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="5" />
+>>>>>>> f89d495ef082c8efd0db2e5082d200bacce659a5
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CachedFetcher.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="240">
           <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+=======
+        <state relative-caret-position="145">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+>>>>>>> f89d495ef082c8efd0db2e5082d200bacce659a5
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SearchScreen.java">
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="94">
           <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
@@ -616,11 +694,24 @@
             <element signature="e#1839#1840#0" expanded="true" />
             <element signature="e#3397#3403#0" expanded="true" />
           </folding>
+=======
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="136" column="16" lean-forward="true" selection-start-line="136" selection-start-column="16" selection-end-line="136" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="177" column="28" lean-forward="true" selection-start-line="177" selection-start-column="28" selection-end-line="177" selection-end-column="28" />
+>>>>>>> f89d495ef082c8efd0db2e5082d200bacce659a5
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CityListScreen.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="555">
           <caret line="67" column="29" lean-forward="true" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
           <folding>
@@ -634,6 +725,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="59" column="78" lean-forward="true" selection-start-line="59" selection-start-column="78" selection-end-line="59" selection-end-column="78" />
+=======
+        <state relative-caret-position="-337">
+          <caret line="61" column="17" lean-forward="true" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
+>>>>>>> f89d495ef082c8efd0db2e5082d200bacce659a5
         </state>
       </provider>
     </entry>
