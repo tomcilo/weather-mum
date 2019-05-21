@@ -80,7 +80,7 @@ public class AppManager {
     public void cityListScreenCitySelected(City city) {
         System.out.println(city + " was selected in the CityListScreen");
         try {
-            mainScreen = new MainScreen(createDummyCity(city.toString()), this);
+            mainScreen = new MainScreen(city, this);
         } catch (Exception e) {
             System.out.println("Seems like there was an exception");
             e.printStackTrace();

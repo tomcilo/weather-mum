@@ -17,12 +17,14 @@ public class CachedFetcher {
 	private static Map<Integer, Weather> current = new HashMap<Integer, Weather>();
 
 	// due to backwards compability, this isn't in Fetcher
-	private static Weather createWeather(Date date, int hour, String description, float realFeel, float high, float low, float overall) {
-		return new Weather();
-	}
 	private static Weather createWeather(Map<String, String> map) {
-//		new Weather(Recommender.recommend(m), )
-		return new Weather();
+		try {
+			return new Weather(map);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	public static String getDisplayName(int code) {
