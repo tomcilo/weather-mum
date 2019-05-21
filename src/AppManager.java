@@ -92,6 +92,7 @@ public class AppManager {
 
     public void goToSearchScreen() {
         System.out.println("I'll go to the SearchScreen");
+        searchScreen = new SearchScreen(this);
         goToScreen(searchScreen);
     }
 
