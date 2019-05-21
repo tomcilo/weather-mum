@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -43,12 +44,11 @@ public class AppManager {
         mainFrame.setVisible(true);
     }
 
-    private City createDummyCity(String cityName)
-    {
+    private City createDummyCity(String cityName) throws ParseException {
         Weather w = new Weather(
                 new Clothing(StyleGuide.getUmbrellaIcon(), StyleGuide.gettShirtIcon(),
-                        StyleGuide.getShortsIcon(), StyleGuide.getShortsIcon(), StyleGuide.getSunnyIcon(), StyleGuide.getSunnyIcon()),
-                "Monday", new Date(), 10, "Sunny", 18, 20, 10, 20);
+                        StyleGuide.getShortsIcon(), StyleGuide.getSneakersIcon(), StyleGuide.getSunnyIcon(), StyleGuide.getSunnyIcon()),
+                "2019-05-21T07:00:00+01:00", 10, "Sunny", 18, 20, 10, 20);
         ArrayList we = new ArrayList<Weather>();
         we.add(w);
 

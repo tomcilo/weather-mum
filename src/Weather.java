@@ -1,5 +1,9 @@
 import java.io.File;
 import java.nio.file.Path;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Weather {
@@ -17,11 +21,14 @@ public class Weather {
 	
 	}
 
-    public Weather(Clothing recommendation,
-                   String weekDay, Date date, int hour, String description,
-                   float realFeel, float high, float low, float overall) {
-        this.recommendation = recommendation;
-        this.weekDay = weekDay;
+    public Weather(Clothing recommendation, String dateString, int hour, String description,
+                   float realFeel, float high, float low, float overall) throws ParseException {
+
+        Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+
+
+	    this.recommendation = recommendation;
+        this.weekDay = StyleGuide.getDateFormat().format(date);
         this.date = date;
         this.hour = hour;
         this.description = description;
