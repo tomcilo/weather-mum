@@ -127,6 +127,11 @@ public class Fetcher {
 		return Integer.parseInt(code);
 	}
 
+	public static List<Map<String, String>> fetchHourlyForecast(int location_code) throws Exception {
+		
+		return new ArrayList<Map<String, String>>();
+	}
+
 	public static List<Map<String, String>> fetchForecast(int location_code) throws Exception {
 		String response = download(String.format(forecast_api, location_code, api_key));
 	
