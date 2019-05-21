@@ -15,7 +15,7 @@ public class AppManager {
     private JPanel currentPanel;
 
     public AppManager() throws IOException {
-        mainFrame = new JFrame();
+        mainFrame = new JFrame("Weather Mum");
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainFrame.setSize(StyleGuide.getScreenWidth(), StyleGuide.getScreenHeight());
 

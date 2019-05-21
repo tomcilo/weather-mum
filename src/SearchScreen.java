@@ -106,7 +106,7 @@ public class SearchScreen extends JPanel  {
         List<City> cityList = new ArrayList<>();
         model = new DefaultListModel<String>();
         JList<String> cityJList = new JList<String>(model);
-        cityJList.setCellRenderer(new CityListRenderer(cityJList, false));
+        cityJList.setCellRenderer(new CityListRenderer(cityJList, false, null));
         cityJList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {

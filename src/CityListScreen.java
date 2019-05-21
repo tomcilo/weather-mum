@@ -48,8 +48,8 @@ public class CityListScreen extends JPanel {
         list.setLayout(new GridLayout(1,1));
         JList<String> cities = new JList<>(model);
 
-        cities.setCellRenderer(new CityListRenderer(cities, true));
-        cities.addListSelectionListener(e -> mainManager.cityListScreenCitySelected(cities.getSelectedValue()));
+        cities.setCellRenderer(new CityListRenderer(cities, true, mainManager));
+        //cities.addListSelectionListener(e -> mainManager.cityListScreenCitySelected(cities.getSelectedValue()));
 
         list.add(cities);
         return list;

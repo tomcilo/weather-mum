@@ -15,10 +15,13 @@ public class CityListRenderer extends DefaultListCellRenderer {
     private static ImageIcon trashCan = new ImageIcon (String.valueOf(StyleGuide.getTrashCan()));
     private boolean trash;
 
-    public CityListRenderer(final JList list, boolean trash)
+    private AppManager mainManager;
+
+    public CityListRenderer(final JList list, boolean trash, AppManager mainManager)
     {
         super();
         this.trash = trash;
+        this.mainManager = mainManager;
         renderer = new CustomLabel(this.trash);
 
         Image image = trashCan.getImage(); // transform it
@@ -39,6 +42,9 @@ public class CityListRenderer extends DefaultListCellRenderer {
                             if (crossRect.contains(pointWithinCell)) {
                                 DefaultListModel model = (DefaultListModel) list.getModel();
                                 model.remove(index);
+                            }
+                            else {
+                                mainManager.cityListScreenCitySelected((String) list.getModel().getElementAt(index));
                             }
                         }
                     }
