@@ -8,15 +8,15 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.*;
 
-public class MainScreen extends JFrame {
+public class MainScreen extends JPanel {
     private City city;
     private int maxAccross = 5;
 
     public MainScreen(City city) throws IOException {
-        super(city.getDisplayName());
+        //super(city.getDisplayName());
         this.city = city;
 
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        //setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         setSize(StyleGuide.getScreenWidth(), StyleGuide.getScreenHeight());
 
@@ -79,6 +79,7 @@ public class MainScreen extends JFrame {
         JPanel outfit =  new JPanel();
         outfit.setLayout(new GridLayout(4,1));
 
+        //System.out.println(city.getCurrent().getRecommendation().getAccesoriesIcon().toURI());
         BufferedImage accessoryIconTmp = ImageIO.read(city.getCurrent().getRecommendation().getAccesoriesIcon());
         Image accessoryIcon = accessoryIconTmp.getScaledInstance(50,50,Image.SCALE_SMOOTH);
         JLabel accessoryIconLabel = new JLabel(new ImageIcon(accessoryIcon));

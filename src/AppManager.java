@@ -39,8 +39,8 @@ public class AppManager {
         mainFrame.add(cityListScreen);
         searchScreen = new SearchScreen();
         mainFrame.add(searchScreen);
-        //mainScreen = new MainScreen(c);
-        //mainFrame.add(mainScreen);
+        mainScreen = new MainScreen(c);
+        mainFrame.add(mainScreen);
         mainFrame.setVisible(true);
     }
 
@@ -49,8 +49,11 @@ public class AppManager {
         System.out.println(message);
     }
 
-    public static void main(String[] args) throws IOException {
-        AppManager appManager = new AppManager();
-
+    public static void main(String[] args) {
+        try {
+            AppManager appManager = new AppManager();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
