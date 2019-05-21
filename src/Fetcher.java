@@ -21,10 +21,10 @@ import java.util.stream.Collectors;
 
 public class Fetcher {
 	// self explanatory
-	private static final String api_key = "Ocdmp360LQbj5E5N17Yv6vGfyBXK94Ju";
+	private static final String api_key = "butr9pnr2s3Ikfgiip18V3HMIClN6XLY";
 	// %d location code
 	// %s api_key
-	private static final String current_api = "http://dataservice.accuweather.com/currentconditions/v1/%d?apikey=%s";
+	private static final String current_api = "http://dataservice.accuweather.com/currentconditions/v1/%d?apikey=%s&details=true";
 	// %s api_key
 	// %s quary (prefix)
 	private static final String autocomplete_api = "http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=%s&q=%s&language=en-uk";
@@ -87,9 +87,9 @@ public class Fetcher {
 		ret.put("WeatherText", obj.get("WeatherText").toString());
 		ret.put("WeatherIcon", obj.get("WeatherIcon").toString());
 
-		ret.put("RealFeelTemperatureLow", __get(obj, "RealFeelTemperature", "Value").toString());
-		ret.put("RealFeelTemperatureHigh", __get(obj, "RealFeelTemperature", "Value").toString());
-		ret.put("RealFeelTemperature", __get(obj, "RealFeelTemperature", "Value").toString());
+		ret.put("RealFeelTemperatureLow", __get(obj, "RealFeelTemperature", "Metric", "Value").toString());
+		ret.put("RealFeelTemperatureHigh", __get(obj, "RealFeelTemperature", "Metric", "Value").toString());
+		ret.put("RealFeelTemperature", __get(obj, "RealFeelTemperature", "Metric", "Value").toString());
 		ret.put("date", __get(obj, "LocalObservationDateTime"));
 
 
@@ -201,7 +201,7 @@ public class Fetcher {
 
 	// Only for testing
 	public static void main(String[] args) throws Exception {
-//		System.out.printf("fetchCurrent(327200 -- Cambridge):\n   %s\n", fetchCurrent(327200));
+		System.out.printf("fetchCurrent(327200 -- Cambridge):\n   %s\n", fetchCurrent(327200));
 
 //		System.out.printf("\n\n\nfetchAutocompletedCities(\"bel\")\n   %s\n", fetchAutocompletedCities("beg"));
 	

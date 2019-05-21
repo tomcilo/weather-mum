@@ -42,6 +42,8 @@ public class MainScreen extends JPanel {
         right.setBackground(StyleGuide.getBackgroundColor());
         // creating left side of top of screen
         // large label for temp
+		if (city.getCurrent() == null)
+			System.out.printf("asdflkjsdalhfjsdalfk\n");
         JLabel tempText = new JLabel(city.getCurrent().getRealFeel() + "°");
         tempText.setFont(StyleGuide.getLargeFont());
         left.add(tempText);

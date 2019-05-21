@@ -45,6 +45,7 @@ public class CachedFetcher {
 				hourly.put(code, Fetcher.fetchHourlyForecast(code).stream().map(x -> createWeather(x)).collect(Collectors.toList()));
 		}
 		catch (Exception e) {
+			e.printStackTrace();
 			System.out.printf("there was an error, too bad (CachedFetcher::getDaily)\n");
 		}
 		return new ArrayList<Weather>(hourly.get(code));
@@ -55,6 +56,7 @@ public class CachedFetcher {
 				daily.put(code, Fetcher.fetchForecast(code).stream().map(x -> createWeather(x)).collect(Collectors.toList()));
 		}
 		catch (Exception e) {
+			e.printStackTrace();
 			System.out.printf("there was an error, too bad (CachedFetcher::getWeekly)\n");
 		}
 		return new ArrayList<Weather>(daily.get(code));
@@ -65,6 +67,7 @@ public class CachedFetcher {
 				current.put(code, createWeather(Fetcher.fetchCurrent(code)));
 		}
 		catch (Exception e) {
+			e.printStackTrace();
 			System.out.printf("there was an error, too bad (CachedFetcher::getCurrent)\n");
 		}
 		return current.get(code);
