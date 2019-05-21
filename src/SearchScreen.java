@@ -129,7 +129,7 @@ public class SearchScreen extends JPanel  {
 
         return cities;
     }
-
+/*
     private City createDummyCity() throws ParseException {
         Weather w = new Weather(
                 new Clothing(StyleGuide.getUmbrellaIcon(), StyleGuide.gettShirtIcon(),
@@ -142,7 +142,7 @@ public class SearchScreen extends JPanel  {
         City c = new City("Test", we, we, w, 20, 10);
         return c;
     }
-
+*/
     private void addBorder(JComponent component, String title) {
         Border etch = BorderFactory.createEtchedBorder(EtchedBorder.LOWERED);
         Border tb = BorderFactory.createTitledBorder(etch,title);

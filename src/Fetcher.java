@@ -21,10 +21,10 @@ import java.util.stream.Collectors;
 
 public class Fetcher {
 	// self explanatory
-	private static final String api_key = "ozq4DQYJniKkwQPLFEATA9kCGPRHA8Tl";
+	private static final String api_key = "P7gmgM5LavPViMCN6CoQfSGpmCz35wG4";
 	// %d location code
 	// %s api_key
-	private static final String current_api = "http://dataservice.accuweather.com/currentconditions/v1/%d?apikey=%s";
+	private static final String current_api = "http://dataservice.accuweather.com/currentconditions/v1/%d?apikey=%s&details=true";
 	// %s api_key
 	// %s quary (prefix)
 	private static final String autocomplete_api = "http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=%s&q=%s&language=en-uk";
@@ -87,7 +87,13 @@ public class Fetcher {
 		ret.put("WeatherText", obj.get("WeatherText").toString());
 		ret.put("WeatherIcon", obj.get("WeatherIcon").toString());
 
+		ret.put("RealFeelTemperatureLow", __get(obj, "RealFeelTemperature", "Metric","Value").toString());
+		ret.put("RealFeelTemperatureHigh", __get(obj, "RealFeelTemperature", "Metric", "Value").toString());
+		ret.put("RealFeelTemperature", __get(obj, "RealFeelTemperature", "Metric", "Value").toString());
+		ret.put("date", __get(obj, "LocalObservationDateTime"));
 
+
+		Weather w = new Weather(ret);
 
 		return ret;
 		//return response;
@@ -196,7 +202,7 @@ public class Fetcher {
 
 	// Only for testing
 	public static void main(String[] args) throws Exception {
-//		System.out.printf("fetchCurrent(327200 -- Cambridge):\n   %s\n", fetchCurrent(327200));
+		System.out.printf("fetchCurrent(327200 -- Cambridge):\n   %s\n", fetchCurrent(327200));
 
 //		System.out.printf("\n\n\nfetchAutocompletedCities(\"bel\")\n   %s\n", fetchAutocompletedCities("beg"));
 	
@@ -204,11 +210,12 @@ public class Fetcher {
 
 		List<Map<String, String>> a = fetchForecast(327200);
 		System.out.printf("\n\n\nfetchForecast(32700 -- Cambridge):\n   %s", a);
-
 		Weather w = new Weather(a.get(0));
 
 		System.out.printf("\n\n\nfetchCityName(327200 -- Cambridge):\n   %s\n", fetchCityName(327200));
-	
+		
+		a = fetchHourlyForecast(327200);
 		System.out.printf("\n\n\nfetchHourlyForecast(327200 -- Cambridge:\n   %s\n", fetchHourlyForecast(327200));
+		w = new Weather(a.get(0));
 	}
 }
