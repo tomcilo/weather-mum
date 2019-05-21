@@ -59,6 +59,9 @@ public final class StyleGuide {
     private static final List<Integer> snow = Arrays.asList(new Integer[] {19,20,21,22,23,24,25,26,29,43,44});
     private static final List<Integer> wind = Arrays.asList(new Integer[] {32});
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("d E");
+    private static final SimpleDateFormat hourFormat = new SimpleDateFormat("H");
+
+    public static SimpleDateFormat getHourFormat() { return hourFormat; }
 
     public static SimpleDateFormat getDateFormat() { return dateFormat; }
 
