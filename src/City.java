@@ -59,4 +59,9 @@ public class City {
         return yesterdayLow;
     }
 
+    @Override
+    public String toString() {
+        return getDisplayName();
+    }
+
 }

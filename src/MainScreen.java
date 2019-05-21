@@ -72,6 +72,7 @@ public class MainScreen extends JPanel {
         right.add(locationButton);
 
         // weather icon
+        System.out.println(city.getCurrent().getRecommendation());
         BufferedImage weathIconTmp = ImageIO.read(city.getCurrent().getRecommendation().getWeatherIcon());
         Image weathIcon = weathIconTmp.getScaledInstance(40,40,Image.SCALE_SMOOTH);
         JLabel weathIconLabel = new JLabel(new ImageIcon(weathIcon));

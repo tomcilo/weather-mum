@@ -44,7 +44,7 @@ public class CityListRenderer extends DefaultListCellRenderer {
                                 model.remove(index);
                             }
                             else {
-                                mainManager.cityListScreenCitySelected((String) list.getModel().getElementAt(index));
+                                mainManager.cityListScreenCitySelected((City) list.getModel().getElementAt(index));
                             }
                         }
                     }
@@ -57,7 +57,7 @@ public class CityListRenderer extends DefaultListCellRenderer {
     public Component getListCellRendererComponent (JList list, Object value, int index, boolean isSelected, boolean cellHasFocus )
     {
         renderer.setSelected ( isSelected );
-        renderer.setData ( (String) value );
+        renderer.setData ( ((City) value).toString() );
         return renderer;
     }
 

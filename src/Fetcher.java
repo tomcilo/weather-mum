@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 
 public class Fetcher {
 	// self explanatory
-	private static final String api_key = "f8nGdthnLGg9rvkUAduJ7SGru28KzuI4";
+	private static final String api_key = "ozq4DQYJniKkwQPLFEATA9kCGPRHA8Tl";
 	// %d location code
 	// %s api_key
 	private static final String current_api = "http://dataservice.accuweather.com/currentconditions/v1/%d?apikey=%s";
@@ -59,6 +59,7 @@ public class Fetcher {
 
 	// Returns raw response given url
 	private static String download(String url) throws MalformedURLException, IOException {
+		System.out.println("download " + url);
 		URL the_url = new URL(url);
 		BufferedReader bf = new BufferedReader(new InputStreamReader(the_url.openStream()));
 
@@ -67,6 +68,7 @@ public class Fetcher {
 
 	// TODO: documentation
 	public static Map<String, String> fetchCurrent(int location_code) throws Exception {
+
 		String response = download(String.format(current_api, location_code, api_key));
 		
 
@@ -96,7 +98,7 @@ public class Fetcher {
 		JSONArray ja = (JSONArray)(new JSONParser().parse(response));
 		
 		List<City> ret = new ArrayList<City>();
-		for (int i = 0; i < ja.size(); i++) {
+		for (int i = 0; i < Math.min(ja.size(), 1); i++) {
 			JSONObject obj = (JSONObject)ja.get(i);
 			JSONObject js_country = (JSONObject)obj.get("Country");
 			JSONObject js_area = (JSONObject)obj.get("AdministrativeArea");
@@ -174,5 +176,7 @@ public class Fetcher {
 //		System.out.printf("\n\n\nfetchForecast(32700 -- Cambridge):\n   %s", fetchForecast(327200));
 
 		System.out.printf("fetchCityName(327200 -- Cambridge):\n   %s\n", fetchCityName(327200));
+	
+		System.out.printf("fetchForecast(327200 -- ");
 	}
 }
