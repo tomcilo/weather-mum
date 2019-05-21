@@ -48,7 +48,7 @@ public class AppManager {
         Weather w = new Weather(
                 new Clothing(StyleGuide.getUmbrellaIcon(), StyleGuide.gettShirtIcon(),
                         StyleGuide.getShortsIcon(), StyleGuide.getSneakersIcon(), StyleGuide.getSunnyIcon(), StyleGuide.getSunnyIcon()),
-                "2019-05-21T07:00:00+01:00", 10, "Sunny", 18, 20, 10, 20);
+                "2019-05-21T07:00:00+01:00", "Sunny", 18, 20, 10, 20);
         ArrayList we = new ArrayList<Weather>();
         we.add(w);
 
