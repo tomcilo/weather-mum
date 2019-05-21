@@ -147,18 +147,18 @@ public class MainScreen extends JPanel {
 
         JLabel l;
         for (int i = 0; i < maxAccross; i++) {
-            l = new JLabel((hourly) ? hourLab(city.getDaily().get(0)) : weekLab(city.getWeekly().get(0)));
+            l = new JLabel((hourly) ? hourLab(city.getDaily().get(i)) : weekLab(city.getWeekly().get(0)));
             l.setFont(StyleGuide.getSmallFont());
             l.setHorizontalAlignment(SwingConstants.CENTER);
             weath.add(l);
         }
         for (int i = 0; i < maxAccross; i++) {
-            BufferedImage iconTmp = ImageIO.read(city.getDaily().get(0).getRecommendation().getMainIcon());
+            BufferedImage iconTmp = ImageIO.read(city.getDaily().get(i).getRecommendation().getMainIcon());
             Image icon = iconTmp.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
             weath.add(new JLabel(new ImageIcon(icon)));
         }
         for (int i = 0; i < maxAccross; i++) {
-            l = new JLabel((hourly) ? hourTemp(city.getDaily().get(0)) : weekTemp(city.getWeekly().get(0)));
+            l = new JLabel((hourly) ? hourTemp(city.getDaily().get(i)) : weekTemp(city.getWeekly().get(0)));
             l.setFont(StyleGuide.getSmallFont());
             l.setHorizontalAlignment(SwingConstants.RIGHT);
             weath.add(l);

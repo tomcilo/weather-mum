@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 
 public class Fetcher {
 	// self explanatory
-	private static final String api_key = "butr9pnr2s3Ikfgiip18V3HMIClN6XLY";
+	private static final String api_key = "GV2u9u2g8hXEdK2XfQOEdVTSc6wdi3di";
 	// %d location code
 	// %s api_key
 	private static final String current_api = "http://dataservice.accuweather.com/currentconditions/v1/%d?apikey=%s&details=true";
