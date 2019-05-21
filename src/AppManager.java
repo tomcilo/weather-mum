@@ -44,10 +44,23 @@ public class AppManager {
         mainFrame.setVisible(true);
     }
 
-    //This is a very generic thing and it's bad but we'll improve on that
-    public void notify(String message) {
-        System.out.println(message);
+    public void goToCityListScreen() {
+        System.out.println("I'll go to the CityListScreen");
     }
+
+
+    public void searchScreenCitySelected(String cityName) {
+        System.out.println(cityName + " was selected in the SearchScreen");
+    }
+
+    public void cityListScreenCitySelected(String cityName) {
+        System.out.println(cityName + " was selected in the CityListScreen");
+    }
+
+    public void goToSearchScreen() {
+        System.out.println("I'll go to the SearchScreen");
+    }
+
 
     public static void main(String[] args) {
         try {

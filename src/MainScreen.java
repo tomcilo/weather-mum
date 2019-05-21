@@ -6,7 +6,6 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.util.*;
 
 public class MainScreen extends JPanel {
     private City city;
@@ -65,7 +64,7 @@ public class MainScreen extends JPanel {
         locationButton.setText(city.getDisplayName());
         locationButton.setHorizontalTextPosition(SwingConstants.RIGHT);
         locationButton.setFont(StyleGuide.getLargeFont());
-        locationButton.addActionListener(e -> mainManager.notify("mainScreenToCityScreen"));
+        locationButton.addActionListener(e -> mainManager.goToCityListScreen());
 
         right.add(locationButton);
 

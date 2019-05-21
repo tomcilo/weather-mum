@@ -10,7 +10,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -40,7 +39,7 @@ public class SearchScreen extends JPanel  {
         exit.setBackground(Color.GRAY);
         exit.setForeground(Color.white);
         exit.setUI(StyleGuide.getButtonStyle());
-        exit.addActionListener(e -> mainManager.notify("goBackToCityList"));
+        exit.addActionListener(e -> mainManager.goToCityListScreen());
         return exit;
     }
 
@@ -114,7 +113,7 @@ public class SearchScreen extends JPanel  {
                 JList<String> list = (JList<String>) e.getSource();
                 String c = list.getSelectedValue();
 
-                mainManager.notify("searchScreenCitySelected "+c);
+                mainManager.searchScreenCitySelected(c);
             }
         });
 
