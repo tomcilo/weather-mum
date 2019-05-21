@@ -34,8 +34,15 @@ public class Fetcher {
 	// %d location code
 	// %s api_key
 	private static final String forecast_api = "http://dataservice.accuweather.com/forecasts/v1/daily/5day/%d?apikey=%s&details=true&metric=true";
+	// %d location_code
+	// %s api_key
+	private static final String cityname_api = "http://dataservice.accuweather.com/locations/v1/%d?apikey=%s&details=true";
 
 	
+	private static String __get(JSONObject obj, String a) {
+		return obj.get(a).toString();
+	}
+
 	private static String __get(JSONObject obj, String a, String b) {
 		JSONObject A = (JSONObject)obj.get(a);
 
@@ -47,7 +54,6 @@ public class Fetcher {
 
 		return B.get(c).toString();
 	}
-
 
 
 
@@ -143,15 +149,25 @@ public class Fetcher {
 
 		return ret;
 	}
+	public static String fetchCityName(int location_code) throws Exception {
+		String response = download(String.format(cityname_api, location_code, api_key));
+
+		JSONObject obj = (JSONObject)(new JSONParser().parse(response));
+
+		return __get(obj, "LocalizedName");
+	
+	}
 
 	// Only for testing
 	public static void main(String[] args) throws Exception {
 //		System.out.printf("fetchCurrent(327200 -- Cambridge):\n   %s\n", fetchCurrent(327200));
 
-		System.out.printf("\n\n\nfetchAutocompletedCities(\"bel\")\n   %s\n", fetchAutocompletedCities("beg"));
+//		System.out.printf("\n\n\nfetchAutocompletedCities(\"bel\")\n   %s\n", fetchAutocompletedCities("beg"));
 	
 //		System.out.printf("\n\n\nfetchCurretnCity()\n   %s\n", fetchCurrentCity());
 
 //		System.out.printf("\n\n\nfetchForecast(32700 -- Cambridge):\n   %s", fetchForecast(327200));
+
+		System.out.printf("fetchCityName(327200 -- Cambridge):\n   %s\n", fetchCityName(327200));
 	}
 }
