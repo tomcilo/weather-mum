@@ -12,15 +12,16 @@ public class AppManager {
     private SearchScreen searchScreen;
     private MainScreen mainScreen;
     private JFrame mainFrame;
+    private JPanel currentPanel;
 
     public AppManager() throws IOException {
         mainFrame = new JFrame();
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        mainFrame.setSize(3*StyleGuide.getScreenWidth(), StyleGuide.getScreenHeight());
+        mainFrame.setSize(StyleGuide.getScreenWidth(), StyleGuide.getScreenHeight());
 
-        mainFrame.setLayout(new GridLayout(1, 3));
+        mainFrame.setLayout(new GridLayout(1, 1));
 
-
+        /*
         Map<String, String> f = new HashMap<>();
         f.put("Temperature", "17.8");
         f.put("WeatherText", "Cloudy");
@@ -33,14 +34,12 @@ public class AppManager {
         ArrayList we = new ArrayList<Weather>();
         we.add(w);
         City c = new City("Test", we, we, w, 20, 10);
-
+        */
 
         cityListScreen = new CityListScreen(this);
         mainFrame.add(cityListScreen);
+        currentPanel = cityListScreen;
         searchScreen = new SearchScreen(this);
-        mainFrame.add(searchScreen);
-        mainScreen = new MainScreen(c, this);
-        mainFrame.add(mainScreen);
         mainFrame.setVisible(true);
     }
 
@@ -59,6 +58,10 @@ public class AppManager {
 
     public void goToSearchScreen() {
         System.out.println("I'll go to the SearchScreen");
+        mainFrame.remove(cityListScreen);
+        mainFrame.add(searchScreen);
+        currentPanel = searchScreen;
+        mainFrame.setVisible(true);
     }
 
 
