@@ -40,6 +40,7 @@ public class SearchScreen extends JPanel  {
         exit.setBackground(Color.GRAY);
         exit.setForeground(Color.white);
         exit.setUI(StyleGuide.getButtonStyle());
+        exit.addActionListener(e -> mainManager.notify("goBackToCityList"));
         return exit;
     }
 
@@ -113,7 +114,7 @@ public class SearchScreen extends JPanel  {
                 JList<String> list = (JList<String>) e.getSource();
                 String c = list.getSelectedValue();
 
-                System.out.println(c);
+                mainManager.notify("searchScreenCitySelected "+c);
             }
         });
 

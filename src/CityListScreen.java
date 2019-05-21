@@ -31,6 +31,7 @@ public class CityListScreen extends JPanel {
         header.setBackground(StyleGuide.getBackgroundColor());
         addBorder(header, "Search");
         JButton findNew = new JButton("Find a New City");
+        findNew.addActionListener(e -> mainManager.notify("findCity"));
         findNew.setFont(StyleGuide.getRegularFont());
         findNew.setBackground(StyleGuide.getSecondaryColor());
         findNew.setForeground(Color.white);
@@ -48,6 +49,8 @@ public class CityListScreen extends JPanel {
         JList<String> cities = new JList<>(model);
 
         cities.setCellRenderer(new CityListRenderer(cities, true));
+        cities.addListSelectionListener(e -> mainManager.notify("cityListScreenCitySelected "+cities.getSelectedValue()));
+
         list.add(cities);
         return list;
     }

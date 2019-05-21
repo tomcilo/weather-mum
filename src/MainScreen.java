@@ -65,6 +65,8 @@ public class MainScreen extends JPanel {
         locationButton.setText(city.getDisplayName());
         locationButton.setHorizontalTextPosition(SwingConstants.RIGHT);
         locationButton.setFont(StyleGuide.getLargeFont());
+        locationButton.addActionListener(e -> mainManager.notify("mainScreenToCityScreen"));
+
         right.add(locationButton);
 
         // weather icon
