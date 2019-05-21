@@ -6,6 +6,8 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class MainScreen extends JPanel {
     private City city;
@@ -170,30 +172,31 @@ public class MainScreen extends JPanel {
         return x.getHighLow();
     }
 
-    /*
+
     public static void main(String[] args) throws Exception {
+        Date date = new SimpleDateFormat("yyyy-MM-dd'T'HH").parse("2019-05-21T07:00:00+01:00");
+        System.out.println(StyleGuide.getHourFormat().format(date));
 
-        Map<String, String> f = new HashMap<>();
-        f.put("Temperature", "17.8");
-        f.put("WeatherText", "Cloudy");
-        f.put("WeatherIcon", "7");
-
-
-        Weather w = new Weather(
-                Recommender.recommend(f),
-                "Monday", new Date(), 10, f.get("WeatherText"),
-                Float.parseFloat(f.get("Temperature")), 20, 10,
-                Float.parseFloat(f.get("Temperature")));
-        ArrayList we = new ArrayList<Weather>();
-        we.add(w);
-
-
-        City c = new City("Test", we, we, w, 20, 10);
-        MainScreen gui = new MainScreen(c);
-        gui.setVisible(true);
-        System.out.println(Recommender.recommend(Fetcher.fetchCurrent(327200)));
+//        Map<String, String> f = new HashMap<>();
+//        f.put("Temperature", "17.8");
+//        f.put("WeatherText", "Cloudy");
+//        f.put("WeatherIcon", "7");
+//
+//
+//        Weather w = new Weather(
+//                Recommender.recommend(f),
+//                "Monday", new Date(), 10, f.get("WeatherText"),
+//                Float.parseFloat(f.get("Temperature")), 20, 10,
+//                Float.parseFloat(f.get("Temperature")));
+//        ArrayList we = new ArrayList<Weather>();
+//        we.add(w);
+//
+//
+//        City c = new City("Test", we, we, w, 20, 10);
+//        MainScreen gui = new MainScreen(c);
+//        gui.setVisible(true);
+//        System.out.println(Recommender.recommend(Fetcher.fetchCurrent(327200)));
     }
-    */
 
 
 

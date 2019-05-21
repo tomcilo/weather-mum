@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Map;
 
 public class Weather {
     private Clothing recommendation;
@@ -21,21 +22,37 @@ public class Weather {
 	
 	}
 
-    public Weather(Clothing recommendation, String dateString, int hour, String description,
+    public Weather(Clothing recommendation, String dateString, String description,
                    float realFeel, float high, float low, float overall) throws ParseException {
 
-        Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+        Date date = new SimpleDateFormat("yyyy-MM-dd'T'HH").parse(dateString);
 
 
 	    this.recommendation = recommendation;
         this.weekDay = StyleGuide.getDateFormat().format(date);
         this.date = date;
-        this.hour = hour;
+        this.hour = Integer.parseInt(StyleGuide.getHourFormat().format(date));
         this.description = description;
         this.realFeel = realFeel;
         this.high = high;
         this.low = low;
         this.overall = overall;
+    }
+
+    public Weather(Map<String, String> map) throws ParseException {
+
+        Date date = new SimpleDateFormat("yyyy-MM-dd'T'HH").parse(map.get("date"));
+
+
+        this.recommendation = Recommender.recommend(map);
+        this.weekDay = StyleGuide.getDateFormat().format(date);
+        this.date = date;
+        this.hour = Integer.parseInt(StyleGuide.getHourFormat().format(date));
+        this.description = map.get("WeatherText");
+        this.realFeel = Float.parseFloat(map.get("RealFeelTemperature"));
+        this.high = Float.parseFloat(map.get("RealFeelTemperatureHigh"));
+        this.low = Float.parseFloat(map.get("RealFeelTemperatureLow"));
+        this.overall = Float.parseFloat(map.get("Temperature"));
     }
 
     public Clothing getRecommendation() {

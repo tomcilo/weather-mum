@@ -21,6 +21,7 @@ public class CachedFetcher {
 		return new Weather();
 	}
 	private static Weather createWeather(Map<String, String> map) {
+//		new Weather(Recommender.recommend(m), )
 		return new Weather();
 	}
 
