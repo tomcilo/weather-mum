@@ -45,7 +45,7 @@ public class SearchScreen extends JPanel  {
         return exit;
     }
 
-    private JPanel createSearchPanel()
+    private JPanel createSearchPanel() 
     {
         JPanel heading = new JPanel();
         heading.setBackground(StyleGuide.getBackgroundColor());

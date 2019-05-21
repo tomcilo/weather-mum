@@ -10,11 +10,16 @@ public class CachedFetcher {
 	// maps location code to the map of attributes of the corresponding cities
 	//     name
 	//
-	static Map<Integer, Map<String, String>> city_store;
+	private static Map<Integer, String> citynames = new HashMap<Integer, String>();
 	public static String getDisplayName(int code) {
-		// TODO: this should never happen now, but it might
-		// break in the future
-		return city_store.get(code).get("name");
+		try {
+			if (citynames.get(code) == null)
+				citynames.put(code, Fetcher.fetchCityName(code));
+		}
+		catch (Exception e) {
+			System.out.printf("there was an error, too bad\n");
+		}
+		return citynames.get(code);
 	}
 	public static List<Weather> getDaily(int code) {
 		return new ArrayList<Weather>();
